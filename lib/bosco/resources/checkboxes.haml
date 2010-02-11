@@ -1,0 +1,7 @@
+%p
+  %label{:for => "#{form}_#{name}"}= title
+  %br
+  - options.each do |o|
+    %input{:type => 'checkbox', :id => "#{form}_#{name}", :name => "#{form}[#{name}]", :value => o}
+    %label= o
+    %br

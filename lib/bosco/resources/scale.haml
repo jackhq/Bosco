@@ -1,0 +1,12 @@
+%p
+  %label{:for => "#{form}_#{name}"}= title
+  %br
+  %label= start_label
+  - i = 0
+  - ((stop_value - start_value) + 1).times do 
+    %input{:type => 'radio', :id => "#{form}_#{name}", :name => "#{form}[#{name}]", :value => (start_value + i).to_s}
+    %label= (start_value + i).to_s 
+    - i += 1
+
+  %label= stop_label
+  
