@@ -43,7 +43,6 @@ describe Bosco::Text do
     html.should =~ /id='myform1_mytext'/
     html.should =~ /name='myform1\[mytext\]'/
     html.should =~ /<\/p>/
-    
   end
 
   it "should render basic text question in html" do

@@ -69,7 +69,7 @@ describe Bosco::Scale do
      html.should =~ /<label>Max<\/label>/
   
      html.should =~ /<\/p>/
-   
+        
   end
 
   it "should render basic text question in html" do

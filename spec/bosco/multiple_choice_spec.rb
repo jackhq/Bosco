@@ -58,7 +58,6 @@ describe Bosco::MultipleChoice do
      html.should =~ /<label>Option 2<\/label>/
 
      html.should =~ /<\/p>/
- 
   end
   # 
   # it "should render basic text question in html" do

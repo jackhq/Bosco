@@ -1,0 +1,9 @@
+%p
+  %label{:for => "#{form}_#{name}"}= title
+  %br
+  - rows.each do |r| 
+    %label= r
+    - columns.each do |c|
+      %input{:type => 'radio', :id => "#{form}_#{name}_#{r}", :name => "#{form}[#{name}_#{r}]", :value => c }
+      %label= c
+    %br
