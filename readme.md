@@ -10,7 +10,7 @@ For the original feature set, the generator will have two api calls:
 
 ## new
 
-* form_template hash object
+* form_template hash object [:form, :output, :css, :javascript]
 
 ## build_form
 
@@ -18,8 +18,7 @@ Will take the following input
 
 * action string object
 * method string object
-* [css] string object
-* [javascript] string object
+* [data hash] - when set it will tell the engine to associate data with questions.
 
 And will return the following string object
 
@@ -87,7 +86,8 @@ Each object can have some validation criteria, one is whether or not if the ques
       :help_text => '',
       :type => 'text',
       :required => true,
-      :regex => /^[red|green]$/
+      :regex => /^[red|green]$/,
+      :value => 'red'
     }
 
 ## Question Type Spec for paragraph
@@ -108,7 +108,7 @@ Each object can have some validation criteria, one is whether or not if the ques
       :help_text => '',
       :type => 'multiple choice',
       :required => false,
-      :options => ['square','circle','triangle']
+      :options => [{'square','Large Red Square'},{'circle','Large Round Circle'},{'triangle','Triangle'}]
     }
 
 ## Question Type Spec for checkboxes
@@ -158,7 +158,7 @@ Each object can have some validation criteria, one is whether or not if the ques
       :type => 'grid',
       :required => false,
       :columns => ['Y','N'],
-      :rows => ['Pain?','Vomiting?','Headache?']
+      :rows => [{'pain','Pain?'}, {'vomitting','Vomiting?'},{'headache','Headache?'}]
     }
 
 ## Question Type Spec for section

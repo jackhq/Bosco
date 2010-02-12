@@ -69,5 +69,29 @@ describe Bosco::Text do
     
   end
   
+  it "should render basic text question in html" do
+    html = Bosco::Text.new(
+      :form => 'myform1',
+      :name => 'mytext',
+      :title => 'Name',
+      :help_text => 'Enter your Name.',
+      :required => true,
+      :value => 'Johnny'
+    ).build
+    
+    html.should =~ /<p>/
+    html.should =~ /<label for='myform1_mytext'>Name<\/label>/
+    html.should =~ /<br \/>/
+    html.should =~ /input/
+    html.should =~ /type='text'/
+    html.should =~ /id='myform1_mytext'/
+    html.should =~ /name='myform1\[mytext\]'/
+    html.should =~ /value='Johnny'/
+    html.should =~ /data-required='true'/
+
+    html.should =~ /<\/p>/
+  end
+  
+  
   
 end

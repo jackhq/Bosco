@@ -30,7 +30,7 @@ describe Bosco::List do
   end
   
   
-  it "should render basic text question in html" do
+  it "should render basic list question in html" do
      html = Bosco::List.new(
        :form => 'myform1',
        :name => 'mytext',
@@ -46,6 +46,28 @@ describe Bosco::List do
      html.should =~ /select data-required='false' id='myform1_mytext'/
      html.should =~ /<option value='List 1'>List 1<\/option>/
      html.should =~ /<option value='List 2'>List 2<\/option>/
+
+     html.should =~ /<\/p>/
+ 
+  end
+
+  it "should render basic list question in html" do
+     html = Bosco::List.new(
+       :form => 'myform1',
+       :name => 'mytext',
+       :title => 'Name',
+       :help_text => 'Enter your Name.',
+       :required => false,
+       :options => ['List 1', 'List 2'],
+       :value => 'List 2'
+     ).build
+ 
+     html.should =~ /<p>/
+     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
+     html.should =~ /<br \/>/
+     html.should =~ /select data-required='false' id='myform1_mytext'/
+     html.should =~ /<option value='List 1'>List 1<\/option>/
+     html.should =~ /<option(.*)selected='true'(.*)value='List 2'>List 2<\/option>/
 
      html.should =~ /<\/p>/
  

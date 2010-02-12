@@ -3,4 +3,4 @@
   %br
   %select{:id => "#{form}_#{name}", :name => "#{form}[#{name}]", "data-required" => required.to_s}
     - options.each do |o|
-      %option{:value => o}= o
+      %option{:value => o, :selected => value == o ? 'true' : false }= o

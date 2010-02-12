@@ -1,9 +1,9 @@
 %p
   %label{:for => "#{form}_#{name}"}= title
   %br
-  - rows.each do |r| 
+  - rows.each_with_index do |r, i| 
     %label= r
     - columns.each do |c|
-      %input{:type => 'radio', :id => "#{form}_#{name}_#{r}", :name => "#{form}[#{name}_#{r}]", :value => c }
+      %input{:type => 'radio', :id => "#{form}_#{name}_#{r}", :name => "#{form}[#{name}_#{r}]", :value => c, :selected => value && value[i][r] == c ? 'true' : false }
       %label= c
     %br

@@ -1,7 +1,7 @@
 module Bosco 
   class Base
     
-    attr_accessor :form, :name, :title, :help_text, :required
+    attr_accessor :form, :name, :title, :help_text, :required, :value
 
     def initialize(attributes=nil)
       if attributes
@@ -11,6 +11,7 @@ module Bosco
         @title  = attributes[:title]
         @help_text = attributes[:help_text]
         @required = attributes[:required]
+        @value = attributes[:value]
       end 
     end
     
@@ -20,7 +21,8 @@ module Bosco
         :name => @name,
         :title => @title,
         :help_text => @help_text,
-        :required => @required
+        :required => @required,
+        :value => @value
       }
       
     end

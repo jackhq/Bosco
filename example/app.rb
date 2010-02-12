@@ -50,10 +50,13 @@ post '/form/create' do
 HAML
   
   template = Crack::JSON.parse(params[:template])
-  engine = Bosco::Main.new(
+  engine = Bosco::Engine.new(
     :form => template["form"],
-    :output => template["output"]
+    :output => template["output"],
+    :css => template["css"] || '',
+    :javascript => template["javascript"] || ''
   )
+  puts engine.build_form('/form/output', 'post')
   haml engine.build_form('/form/output', 'post'), :layout => x
   #haml template["form"].inspect, :layout => x
 end
@@ -78,6 +81,25 @@ HAML
   haml params.inspect, :layout => x
   
 end
+
+get "/form/edit" do
+
+  engine = Bosco::Engine.new(
+    :form => template["form"],
+    :output => template["output"],
+    :css => template["css"] || '',
+    :javascript => template["javascript"] || ''
+  )
+  haml engine.build_form('/form/output', 'post', 
+    :name => 'Tom', 
+    :address => '342 6th Avenue', 
+    :state => 'SC'), :layout => false
+  
+  
+  
+
+end
+
 
 
 

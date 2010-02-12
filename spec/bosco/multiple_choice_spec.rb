@@ -59,6 +59,40 @@ describe Bosco::MultipleChoice do
 
      html.should =~ /<\/p>/
   end
+
+  it "should render basic text question in html" do
+     html = Bosco::MultipleChoice.new(
+       :form => 'myform1',
+       :name => 'mytext',
+       :title => 'Name',
+       :help_text => 'Enter your Name.',
+       :required => false,
+       :options => ['Option 1', 'Option 2'],
+       :value => 'Option 1'
+     ).build
+ 
+     html.should =~ /<p>/
+     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
+     html.should =~ /<br \/>/
+     html.should =~ /input/
+     html.should =~ /type='radio'/   
+     html.should =~ /id='myform1_mytext'/
+     html.should =~ /name='myform1\[mytext\]'/
+     html.should =~ /selected='true'(.*)value='Option 1'/
+     html.should =~ /<label>Option 1<\/label>/
+
+     html.should =~ /input/
+     html.should =~ /type='radio'/   
+     html.should =~ /id='myform1_mytext'/
+     html.should =~ /name='myform1\[mytext\]'/
+     html.should =~ /value='Option 2'/
+     html.should =~ /<label>Option 2<\/label>/
+
+     html.should =~ /<\/p>/
+     
+     #puts html
+  end
+
   # 
   # it "should render basic text question in html" do
   #   html = Bosco::MultipleChoice.new(

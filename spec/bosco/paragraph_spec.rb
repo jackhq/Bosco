@@ -39,7 +39,7 @@ describe Bosco::Paragraph do
     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
     html.should =~ /<br \/>/
     html.should =~ /textarea/
-    html.should =~ /id='myform1_mytext'/
+    html.should =~ /myform1_mytext/
     html.should =~ /name='myform1\[mytext\]'/
     html.should =~ /<\/p>/
     
@@ -60,6 +60,28 @@ describe Bosco::Paragraph do
     html.should =~ /textarea/
     html.should =~ /id='myform2_mytext2'/
     html.should =~ /name='myform2\[mytext2\]'/
+    html.should =~ /<\/p>/
+    
+  end
+
+  it "should render basic text question in html" do
+    html = Bosco::Paragraph.new(
+      :form => 'myform2',
+      :name => 'mytext2',
+      :title => 'SomeTitle',
+      :help_text => 'Enter your Title.',
+      :required => false,
+      :value => 'The lazy brown fox walked to the market.'
+    ).build
+    
+    html.should =~ /<p>/
+    html.should =~ /<label for='myform2_mytext2'>SomeTitle<\/label>/
+    html.should =~ /<br \/>/
+    html.should =~ /textarea/
+    html.should =~ /id='myform2_mytext2'/
+    html.should =~ /name='myform2\[mytext2\]'/
+    html.should =~ /textarea(.*)The lazy brown fox walked to the market./
+    
     html.should =~ /<\/p>/
     
   end

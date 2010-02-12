@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe Bosco::Main do
+describe Bosco::Engine do
   
   before(:all) do
     css = <<CSS
@@ -15,7 +15,7 @@ $(function(){
 });        
 JAVASCRIPT
 
-    @main = Bosco::Main.new(
+    @main = Bosco::Engine.new(
       :form => { 
         :form => 'myform', 
         :form_action => '/', 
@@ -55,7 +55,7 @@ JAVASCRIPT
   
   it "should implement form_build" do
     html = @main.build_form('/', 'post')
-    puts html
+    #puts html
     
     html.should =~ /form/
     html.should =~ /div/
