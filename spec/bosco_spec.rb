@@ -3,6 +3,18 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe Bosco::Main do
   
   before(:all) do
+    css = <<CSS
+p { margin:0;padding:0;font-size:1.25em; }
+CSS
+
+    javascript = <<JAVASCRIPT
+$(function(){
+  $('form').submit(function(){
+    alert('need to add validations');
+  });
+});        
+JAVASCRIPT
+
     @main = Bosco::Main.new(
       :form => { 
         :form => 'myform', 
@@ -29,9 +41,10 @@ describe Bosco::Main do
       :output => %Q{
 %p
   Hello \#{name}, thanks it will be awesome to see the \#{problems.to_sentence}      
-}
-
-    )
+},
+      :css => css,
+      :javascript => javascript
+      )
   
   end
   
@@ -42,6 +55,7 @@ describe Bosco::Main do
   
   it "should implement form_build" do
     html = @main.build_form('/', 'post')
+    puts html
     
     html.should =~ /form/
     html.should =~ /div/

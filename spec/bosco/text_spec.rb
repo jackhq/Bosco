@@ -32,7 +32,7 @@ describe Bosco::Text do
       :name => 'mytext',
       :title => 'Name',
       :help_text => 'Enter your Name.',
-      :required => false
+      :required => true
     ).build
     
     html.should =~ /<p>/
@@ -42,6 +42,8 @@ describe Bosco::Text do
     html.should =~ /type='text'/
     html.should =~ /id='myform1_mytext'/
     html.should =~ /name='myform1\[mytext\]'/
+    html.should =~ /data-required='true'/
+
     html.should =~ /<\/p>/
   end
 
@@ -61,6 +63,8 @@ describe Bosco::Text do
     html.should =~ /type='text'/
     html.should =~ /id='myform2_mytext2'/
     html.should =~ /name='myform2\[mytext2\]'/
+    html.should =~ /data-required='false'/
+
     html.should =~ /<\/p>/
     
   end

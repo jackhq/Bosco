@@ -1,6 +1,6 @@
 %p
   %label{:for => "#{form}_#{name}"}= title
   %br
-  %select{:id => "#{form}_#{name}", :name => "#{form}[#{name}]"}
+  %select{:id => "#{form}_#{name}", :name => "#{form}[#{name}]", "data-required" => required.to_s}
     - options.each do |o|
       %option{:value => o}= o

@@ -8,16 +8,22 @@ end
 module Bosco 
 
   class Main
-    attr_accessor :form, :output
+    attr_accessor :form, :output, :css, :javascript
   
     def initialize(attributes=nil)
       @form = attributes[:form] if attributes
       @output = attributes[:output] if attributes
+      @css = attributes[:css] if attributes && attributes[:css]
+      @javascript = attributes[:javascript] if attributes && attributes[:javascript]
 
     end
   
     def build_form(method, action)
-      Bosco::Form.new(@form.merge(:form_method => method, :form_action => action)).build
+      result = ''
+      result += "<style type='text/css'>#{@css}</style>\n" if @css
+      result += "<script type='text/javascript'>#{@javascript}</javascript>\n" if @javascript
+      result += Bosco::Form.new(@form.merge(:form_method => method, :form_action => action)).build
+      result
     end
   
     def build_output(locals=nil)

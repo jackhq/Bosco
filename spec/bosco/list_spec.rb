@@ -43,7 +43,7 @@ describe Bosco::List do
      html.should =~ /<p>/
      html.should =~ /<label for='myform1_mytext'>Name<\/label>/
      html.should =~ /<br \/>/
-     html.should =~ /select id='myform1_mytext'/
+     html.should =~ /select data-required='false' id='myform1_mytext'/
      html.should =~ /<option value='List 1'>List 1<\/option>/
      html.should =~ /<option value='List 2'>List 2<\/option>/
 
