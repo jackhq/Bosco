@@ -5,6 +5,7 @@ module Bosco
 
     def initialize(attributes=nil)
       if attributes
+        
         @form   = attributes[:form]
         @name   = attributes[:name]
         @title  = attributes[:title]

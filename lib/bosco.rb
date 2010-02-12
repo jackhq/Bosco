@@ -1,8 +1,8 @@
 require 'haml'
+require File.dirname(__FILE__) + '/string_to_keys'
 
-
-%w{ base text paragraph multiple_choice checkboxes list scale grid section page form output }.each do |lib|
-  require File.dirname(__FILE__) + '/bosco/' + lib
+Dir.glob(File.dirname(__FILE__) + '/bosco/**/*.rb').each do |lib|
+  require lib
 end
 
 module Bosco 
@@ -11,14 +11,15 @@ module Bosco
     attr_accessor :form, :output, :css, :javascript
   
     def initialize(attributes=nil)
-      @form = attributes[:form] if attributes
+      @form = attributes[:form].key_strings_to_symbols! if attributes
+      puts @form.inspect
       @output = attributes[:output] if attributes
       @css = attributes[:css] if attributes && attributes[:css]
       @javascript = attributes[:javascript] if attributes && attributes[:javascript]
 
     end
   
-    def build_form(method, action)
+    def build_form(action, method)
       result = ''
       result += "<style type='text/css'>#{@css}</style>\n" if @css
       result += "<script type='text/javascript'>#{@javascript}</javascript>\n" if @javascript
@@ -29,6 +30,7 @@ module Bosco
     def build_output(locals=nil)
       Bosco::Output.new(:output => @output, :locals => locals).build
     end
+        
   
   end
 
