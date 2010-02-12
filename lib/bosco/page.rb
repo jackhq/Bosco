@@ -14,6 +14,7 @@ module Bosco
       engine.render Object.new, attributes do
         result = ''
         @questions.each do |q|
+          q.merge!(:form => @form)
           if q[:type] == 'text'
             result += Bosco::Text.new(q).build
           elsif q[:type] == 'paragraph'

@@ -16,7 +16,7 @@ module Bosco
       engine.render Object.new, attributes do
         result = ''
         @pages.each do |p|
-          result += Bosco::Page.new(p).build
+          result += Bosco::Page.new(p.merge(:form => @form)).build
         end if @pages
         result
       end

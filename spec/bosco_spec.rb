@@ -9,10 +9,8 @@ describe Bosco::Main do
         :form_action => '/', 
         :form_method => 'post',
         :pages => [{
-          :form => 'myform',
           :questions => [{
             :type => 'text',
-            :form => 'myform',
             :name => 'mytext2',
             :title => 'SomeTitle',
             :help_text => 'Enter your Title.',
@@ -20,7 +18,6 @@ describe Bosco::Main do
           },
           {
             :type => 'paragraph',
-            :form => 'myform',
             :name => 'myparagraph',
             :title => 'Big Paragraph',
             :help_text => 'Sweet',
@@ -48,6 +45,9 @@ describe Bosco::Main do
     
     html.should =~ /form/
     html.should =~ /div/
+    html.should =~ /label/
+    html.should =~ /input/
+    
     
   end
 
