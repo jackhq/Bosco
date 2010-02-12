@@ -24,4 +24,28 @@ describe Bosco::Page do
     b.required.should == false
     
   end
+
+  it "should render page div" do
+    html = Bosco::Page.new(
+      :form => 'myform',
+      :questions => [{
+        :type => 'text',
+        :form => 'myform',
+        :name => 'mytext2',
+        :title => 'SomeTitle',
+        :help_text => 'Enter your Title.',
+        :required => false 
+      },
+      {
+        :type => 'paragraph',
+        :form => 'myform',
+        :name => 'myparagraph',
+        :title => 'Big Paragraph',
+        :help_text => 'Sweet',
+        :required => false 
+      }]      
+    ).build
+    #puts html
+  end
+
 end
