@@ -13,8 +13,6 @@ describe Bosco::Output do
   Hello \#{name}, thanks it will be awesome to see the \#{problems.to_sentence}
 }
 
-    puts markup
-    
     html = Bosco::Output.new(
       :output => markup, 
       :locals => {
@@ -23,7 +21,8 @@ describe Bosco::Output do
       }
     ).build
     
-    puts html
+    html.should =~ /<p>\nHello Tom, thanks it will be awesome to see the pain, nausea, and vomitting\n<\/p>/
+    
   end
   
 

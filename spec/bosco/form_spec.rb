@@ -68,6 +68,12 @@ describe Bosco::Form do
         }]
       }]      
     ).build
+    
+    html.should =~ /form/
+    html.should =~ /div/
+    
+    html.should =~ /input/
+    
   end
   
 end

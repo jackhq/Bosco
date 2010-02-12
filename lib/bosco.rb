@@ -7,21 +7,23 @@ end
 
 module Bosco 
 
-  class << self
-    attr_accessor :template
-    
+  class Main
+    attr_accessor :form, :output
+  
     def initialize(attributes=nil)
-      @template = attributes[:template]
+      @form = attributes[:form] if attributes
+      @output = attributes[:output] if attributes
+
     end
-    
+  
     def build_form(method, action)
-      Bosco::Form.new(@template[:form].merge(:form_method => method, :form_action => action)).build
+      Bosco::Form.new(@form.merge(:form_method => method, :form_action => action)).build
     end
-    
+  
     def build_output(locals=nil)
-      Bosco::Output.new(@template[:output], locals).build
+      Bosco::Output.new(:output => @output, :locals => locals).build
     end
-    
+  
   end
 
 end
