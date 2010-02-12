@@ -1,3 +1,7 @@
+gem 'sqlite3-ruby'
 gem 'sinatra'
 gem 'haml'
 gem 'crack'
+gem 'sequel'
+gem 'activesupport'
+gem 'json'

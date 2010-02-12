@@ -18,7 +18,10 @@ module Bosco
 
     end
   
-    def build_form(action, method)
+    def build_form(action, method, data=nil)
+      # if data, set value node to each question.
+      add_values_to_questions(data) if data
+      
       result = ''
       result += "<style type='text/css'>#{@css}</style>\n" if @css
       result += "<script type='text/javascript'>#{@javascript}</script>\n" if @javascript
@@ -30,7 +33,14 @@ module Bosco
       Bosco::Output.new(:output => @output, :locals => locals).build
     end
         
-  
+    def add_values_to_questions(data)
+      @form[:pages].each do |p|
+        p[:questions].each do |q|
+          q.merge!(:value => data[q[:name].to_sym])
+        end
+      end
+    end
+    
   end
 
 end

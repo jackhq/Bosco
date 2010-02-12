@@ -109,6 +109,7 @@ Each object can have some validation criteria, one is whether or not if the ques
       :type => 'multiple choice',
       :required => false,
       :options => [{'square','Large Red Square'},{'circle','Large Round Circle'},{'triangle','Triangle'}]
+      
     }
 
 ## Question Type Spec for checkboxes

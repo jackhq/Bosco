@@ -78,7 +78,7 @@ describe Bosco::MultipleChoice do
      html.should =~ /type='radio'/   
      html.should =~ /id='myform1_mytext'/
      html.should =~ /name='myform1\[mytext\]'/
-     html.should =~ /selected='true'(.*)value='Option 1'/
+     html.should =~ /checked='true'(.*)value='Option 1'/
      html.should =~ /<label>Option 1<\/label>/
 
      html.should =~ /input/

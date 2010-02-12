@@ -1,0 +1,14 @@
+%h1 Welcome to Bosco
+
+%a{:href => "/form/#{@result[:id]}/edit"} Edit
+
+%ul
+  - @result.result_items.each do |i|
+    %li
+      = i[:name]
+      %br
+      = i[:value]
+      %br
+      = i[:type]
+      %br
+      = i[:title]

@@ -13,7 +13,7 @@ module Bosco
     def build
       markup = open(File.dirname(__FILE__) + '/resources/grid.haml', 'r').read
       engine = Haml::Engine.new(markup, :ugly => true)
-      engine.render Object.new, attributes
+      engine.render Object.new, attributes.merge!(:answer_list => value)
     end
     
     def attributes

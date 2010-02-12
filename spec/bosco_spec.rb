@@ -17,7 +17,7 @@ JAVASCRIPT
 
     @main = Bosco::Engine.new(
       :form => { 
-        :form => 'myform', 
+        :name => 'myform', 
         :form_action => '/', 
         :form_method => 'post',
         :pages => [{
@@ -74,6 +74,23 @@ JAVASCRIPT
     html.should =~ /<p>\nHello Tom, thanks it will be awesome to see the pain, nausea, and vomitting\n<\/p>/
 
   end
+  
+
+  it "should implement form_build" do
+    data = {:mytext2 => "Hello World", :myparagraph => "Good bye World"}
+    html = @main.build_form('/', 'post', data)
+    #puts html
+    
+    html.should =~ /form/
+    html.should =~ /div/
+    html.should =~ /label/
+    html.should =~ /input(.*)value='Hello World'/
+    html.should =~ /textarea(.*)Good bye World(.*)textarea/
+    
+    puts html
+    
+  end
+  
   
   
 end

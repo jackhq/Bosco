@@ -51,14 +51,14 @@ describe Bosco::Grid do
      html.should =~ /<label for='myform1_mytext'>Name<\/label>/
      html.should =~ /<br \/>/
      html.should =~ /<label>Pain<\/label>/
-     html.should =~ /<input id='myform1_mytext_Pain' name='myform1\[mytext_Pain\]' type='radio' value='Y' \/>/
+     html.should =~ /<input id='myform1_mytext_Pain_Y' name='myform1\[mytext_Pain\]' type='radio' value='Y' \/>/
      html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Pain' name='myform1\[mytext_Pain\]' type='radio' value='N' \/>/
+     html.should =~ /<input id='myform1_mytext_Pain_N' name='myform1\[mytext_Pain\]' type='radio' value='N' \/>/
      html.should =~ /<label>N<\/label>/    
      html.should =~ /<label>Nausea<\/label>/
-     html.should =~ /<input id='myform1_mytext_Nausea' name='myform1\[mytext_Nausea\]' type='radio' value='Y' \/>/
+     html.should =~ /<input id='myform1_mytext_Nausea_Y' name='myform1\[mytext_Nausea\]' type='radio' value='Y' \/>/
      html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Nausea' name='myform1\[mytext_Nausea\]' type='radio' value='N' \/>/
+     html.should =~ /<input id='myform1_mytext_Nausea_N' name='myform1\[mytext_Nausea\]' type='radio' value='N' \/>/
      html.should =~ /<label>N<\/label>/    
     
      html.should =~ /<\/p>/
@@ -84,18 +84,18 @@ describe Bosco::Grid do
      html.should =~ /<label for='myform1_mytext'>Name<\/label>/
      html.should =~ /<br \/>/
      html.should =~ /<label>Pain<\/label>/
-     html.should =~ /<input id='myform1_mytext_Pain' name='myform1\[mytext_Pain\]' type='radio' value='Y' \/>/
+     html.should =~ /<input id='myform1_mytext_Pain_Y' name='myform1\[mytext_Pain\]' type='radio' value='Y' \/>/
      html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input(.*)id='myform1_mytext_Pain'(.*)name='myform1\[mytext_Pain\]'(.*)selected='true'(.*)type='radio' value='N' \/>/
+     html.should =~ /<input(.*)checked='checked'(.*)id='myform1_mytext_Pain_N'(.*)name='myform1\[mytext_Pain\]'(.*)type='radio' value='N' \/>/
      html.should =~ /<label>N<\/label>/    
      html.should =~ /<label>Nausea<\/label>/
-     html.should =~ /<input id='myform1_mytext_Nausea'(.*)name='myform1\[mytext_Nausea\]'(.*)selected='true'(.*)type='radio' value='Y' \/>/
+     html.should =~ /<input(.*)checked='checked'(.*)id='myform1_mytext_Nausea_Y'(.*)name='myform1\[mytext_Nausea\]'(.*)type='radio' value='Y' \/>/
      html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Nausea' name='myform1\[mytext_Nausea\]' type='radio' value='N' \/>/
+     html.should =~ /<input id='myform1_mytext_Nausea_N' name='myform1\[mytext_Nausea\]' type='radio' value='N' \/>/
      html.should =~ /<label>N<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Vomitting'(.*)name='myform1\[mytext_Vomitting\]'(.*)type='radio' value='Y' \/>/
+     html.should =~ /<input id='myform1_mytext_Vomitting_Y'(.*)name='myform1\[mytext_Vomitting\]'(.*)type='radio' value='Y' \/>/
      html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input(.*)id='myform1_mytext_Vomitting'(.*)name='myform1\[mytext_Vomitting\]'(.*)selected='true'(.*)type='radio' value='N' \/>/
+     html.should =~ /<input(.*)checked='checked'(.*)id='myform1_mytext_Vomitting_N'(.*)name='myform1\[mytext_Vomitting\]'(.*)type='radio' value='N' \/>/
      html.should =~ /<label>N<\/label>/    
     
      html.should =~ /<\/p>/

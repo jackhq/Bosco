@@ -2,6 +2,6 @@
   %label{:for => "#{form}_#{name}"}= title
   %br
   - options.each do |o|
-    %input{:type => 'radio', :id => "#{form}_#{name}", :name => "#{form}[#{name}]", :value => o, :selected => value == o ? 'true' : false }
+    %input{:type => 'radio', :id => "#{form}_#{name}", :name => "#{form}[#{name}]", :value => o, :checked => value == o ? 'true' : false }
     %label= o
     %br

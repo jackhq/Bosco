@@ -1,0 +1,50 @@
+{ 
+  "form": {
+      "name": "fooform", 
+      "pages": [{
+          "questions": [{
+              "type": "text",
+              "name": "name",
+              "title": "Name",
+              "help_text": "What is your name?"
+          },
+          {
+              "type": "paragraph",
+              "name": "address",
+              "title": "Address",
+              "help_text": "What is your address?"
+          },
+          {
+              "type": "list",
+              "name": "state",
+              "title": "State",
+              "help_text": "What is your state?",
+              "options": ['SC','NC','GA']
+          },
+          {
+              "type": "scale",
+              "name": "mood",
+              "title": "How are you feeling?",
+              "help_text": "",
+              "start_value": 1,
+              "stop_value":  5,
+              "start_label":  "Bad",
+              "stop_label":  "Good"
+          },
+          {
+              "type": "grid",
+              "name": "problems",
+              "title": "Rate the severity of your problems?",
+              "help_text": "",
+              "columns": ['Y','N'],
+              "rows":  ['Pain','Nausea','Vomitting']
+              
+          }
+
+          ]
+       }]
+   },
+   "output": "Hello #{name}, <br /> How are you doing at #{address}, It seems your mood is a #{mood} today.",
+   "css": "label { font-size:1em; }",
+   "javascript": ""  
+}

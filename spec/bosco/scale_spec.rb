@@ -134,7 +134,7 @@ describe Bosco::Scale do
      html.should =~ /<label>3<\/label>/    
      html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='4' \/>/
      html.should =~ /<label>4<\/label>/    
-     html.should =~ /<input(.*)id='myform1_mytext'(.*)name='myform1\[mytext\]'(.*)selected='true'(.*)type='radio'(.*)value='5'(.*)\/>/
+     html.should =~ /<input(.*)checked='true'(.*)id='myform1_mytext'(.*)name='myform1\[mytext\]'(.*)type='radio'(.*)value='5'(.*)\/>/
      html.should =~ /<label>5<\/label>/    
      html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='6' \/>/
      html.should =~ /<label>6<\/label>/    
