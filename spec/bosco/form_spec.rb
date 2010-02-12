@@ -68,7 +68,6 @@ describe Bosco::Form do
         }]
       }]      
     ).build
-    puts html
   end
   
 end
