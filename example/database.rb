@@ -9,6 +9,8 @@ class Result < Sequel::Model
     result_items.each do |ri|
       if ri[:type] == 'grid'
         result.merge!( ri[:name].to_sym => Crack::JSON.parse(ri[:value]) )      
+      elsif ri[:type] == 'checkboxes'
+        result.merge!( ri[:name].to_sym => Crack::JSON.parse(ri[:value]) )      
       elsif ri[:type] == 'scale'
         result.merge!( ri[:name].to_sym => ri[:value].to_i )      
       else
@@ -24,10 +26,14 @@ class Result < Sequel::Model
         value = nil
         if q[:type] == 'grid'
           value = []
-          data.each do |k, v|
-            if k =~ /#{q[:name]}_(.*)/
-              value << { k.split('_').pop => v}
-            end
+          data[q[:name]].each do |k, v|
+            value << {k => v}
+          end
+          value = value.to_json
+        elsif q[:type] == 'checkboxes'
+          value = []
+          data[q[:name]].each do |k, v|
+            value << k
           end
           value = value.to_json
         else

@@ -87,7 +87,7 @@ JAVASCRIPT
     html.should =~ /input(.*)value='Hello World'/
     html.should =~ /textarea(.*)Good bye World(.*)textarea/
     
-    puts html
+    #puts html
     
   end
   

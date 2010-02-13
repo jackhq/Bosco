@@ -1,6 +1,6 @@
 { 
   "form": {
-      "name": "fooform", 
+      "name": "foo", 
       "pages": [{
           "questions": [{
               "type": "text",
@@ -15,12 +15,28 @@
               "help_text": "What is your address?"
           },
           {
+              "type": "multiple_choice",
+              "name": "color",
+              "title": "Favorite Color",
+              "help_text": "color?",
+              "options": ['Red','Blue','Green']
+          },
+          {
+              "type": "checkboxes",
+              "name": "pets",
+              "title": "Favorite Pets",
+              "help_text": "pets?",
+              "options": ['Dog','Cat','Fish']
+          },
+          
+          {
               "type": "list",
               "name": "state",
               "title": "State",
               "help_text": "What is your state?",
               "options": ['SC','NC','GA']
           },
+          
           {
               "type": "scale",
               "name": "mood",

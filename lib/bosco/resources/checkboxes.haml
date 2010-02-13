@@ -3,6 +3,6 @@
   %br
   %div{:id => "#{form}_#{name}", "data-required" => required ? required.to_s : false}  
     - options.each_with_index do |o, i|
-      %input{:type => 'checkbox', :id => "#{form}_#{name}_#{o.underscore}", :name => "#{form}[#{name}]", :value => o.underscore, :checked => value && value.index(o.underscore) ? 'true' : false}
+      %input{:type => 'checkbox', :id => "#{form}_#{name}_#{o.underscore}", :name => "#{form}[#{name}][#{o.underscore}]", :value => '1', :checked => value && value.index(o.underscore) ? 'true' : false}
       %label= o
       %br

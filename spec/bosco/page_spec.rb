@@ -45,7 +45,7 @@ describe Bosco::Page do
         :required => false 
       }]      
     ).build
-    #puts html
+
   end
 
 end

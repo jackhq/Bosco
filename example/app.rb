@@ -30,10 +30,10 @@ post '/form/create' do
   @result = Result.create(
     :template_name => 'form.json',
     :form_name => @engine.form[:name],
-    :output => @engine.build_output(params["fooform"])
+    :output => @engine.build_output(params["foo"])
   )
   
-  @result.save_items(params["fooform"], @engine.form)
+  @result.save_items(params["foo"], @engine.form)
 
   haml :index
 end
