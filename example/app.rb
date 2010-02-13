@@ -49,7 +49,7 @@ end
 
 post "/form/:id" do |id|
   @result = Result[id]
-  @result.save_items(params["fooform"], @engine.form)
+  @result.save_items(params["foo"], @engine.form)
   haml :index  
 end
 
