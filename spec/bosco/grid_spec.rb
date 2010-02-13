@@ -1,106 +1,37 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Bosco::Grid do
-
-  it "should be valid" do
-    Bosco::Grid.new.should be_true
-  end
-
-  it "should initialize attributes" do
-    b = Bosco::Grid.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
+  before(:all) do
+    @grid = Bosco::Grid.new(
+      :form => 'foo',
+      :name => 'problems',
+      :title => 'Problems',
+      :help_text => 'Enter your problems',
       :required => false,
       :columns => ['Y', 'N'],
       :rows => ['Pain', 'Nausea','Vomitting']      
     )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
-    b.columns[0].should == 'Y'
-    b.columns[1].should == 'N'
-    
-    b.rows[0].should == 'Pain'
-    b.rows[1].should == 'Nausea'
-    b.rows[2].should == 'Vomitting'
-    
-    
-    
-    
-  end
-  # 
-  # 
-  it "should render basic text question in html" do
-     html = Bosco::Grid.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :columns => ['Y', 'N'],
-       :rows => ['Pain', 'Nausea','Vomitting']
-       
-     ).build
-   
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /<label>Pain<\/label>/
-     html.should =~ /<input id='myform1_mytext_Pain_Y' name='myform1\[mytext_Pain\]' type='radio' value='Y' \/>/
-     html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Pain_N' name='myform1\[mytext_Pain\]' type='radio' value='N' \/>/
-     html.should =~ /<label>N<\/label>/    
-     html.should =~ /<label>Nausea<\/label>/
-     html.should =~ /<input id='myform1_mytext_Nausea_Y' name='myform1\[mytext_Nausea\]' type='radio' value='Y' \/>/
-     html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Nausea_N' name='myform1\[mytext_Nausea\]' type='radio' value='N' \/>/
-     html.should =~ /<label>N<\/label>/    
-    
-     html.should =~ /<\/p>/
-   
   end
   
-
-  it "should render basic text question in html" do
-     html = Bosco::Grid.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :columns => ['Y', 'N'],
-       :rows => ['Pain', 'Nausea','Vomitting'],
-       :value => [{'Pain' => 'N'}, {'Nausea' => 'Y'}, {'Vomitting' => 'N'}]      
-  
-       
-     ).build
-   
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /<label>Pain<\/label>/
-     html.should =~ /<input id='myform1_mytext_Pain_Y' name='myform1\[mytext_Pain\]' type='radio' value='Y' \/>/
-     html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input(.*)checked='checked'(.*)id='myform1_mytext_Pain_N'(.*)name='myform1\[mytext_Pain\]'(.*)type='radio' value='N' \/>/
-     html.should =~ /<label>N<\/label>/    
-     html.should =~ /<label>Nausea<\/label>/
-     html.should =~ /<input(.*)checked='checked'(.*)id='myform1_mytext_Nausea_Y'(.*)name='myform1\[mytext_Nausea\]'(.*)type='radio' value='Y' \/>/
-     html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Nausea_N' name='myform1\[mytext_Nausea\]' type='radio' value='N' \/>/
-     html.should =~ /<label>N<\/label>/    
-     html.should =~ /<input id='myform1_mytext_Vomitting_Y'(.*)name='myform1\[mytext_Vomitting\]'(.*)type='radio' value='Y' \/>/
-     html.should =~ /<label>Y<\/label>/    
-     html.should =~ /<input(.*)checked='checked'(.*)id='myform1_mytext_Vomitting_N'(.*)name='myform1\[mytext_Vomitting\]'(.*)type='radio' value='N' \/>/
-     html.should =~ /<label>N<\/label>/    
-    
-     html.should =~ /<\/p>/
-   
+  it "should be valid" do
+    Bosco::Grid.new.should be_true
   end
 
+  it "should render grid" do
+    @grid.required = false
+    @grid.build.should == "<p>\n<label for='foo_problems'>Problems</label>\n<br />\n<table border='0' cellpadding='0' cellspacing='0' id='foo_problems'>\n<tr>\n<td>&nbsp;</td>\n<td style='text-align:center'>Y</td>\n<td style='text-align:center'>N</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Pain</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_pain_y' name='foo[problems][pain]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_pain_n' name='foo[problems][pain]' type='radio' value='n' />\n</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Nausea</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_nausea_y' name='foo[problems][nausea]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_nausea_n' name='foo[problems][nausea]' type='radio' value='n' />\n</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Vomitting</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_vomitting_y' name='foo[problems][vomitting]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_vomitting_n' name='foo[problems][vomitting]' type='radio' value='n' />\n</td>\n</tr>\n</table>\n</p>\n"
+  end
   
+  it "should render required grid" do
+    @grid.required = true
+    @grid.build.should == "<p>\n<label class='required' for='foo_problems'>Problems</label>\n<br />\n<table border='0' cellpadding='0' cellspacing='0' data-required='true' id='foo_problems'>\n<tr>\n<td>&nbsp;</td>\n<td style='text-align:center'>Y</td>\n<td style='text-align:center'>N</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Pain</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_pain_y' name='foo[problems][pain]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_pain_n' name='foo[problems][pain]' type='radio' value='n' />\n</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Nausea</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_nausea_y' name='foo[problems][nausea]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_nausea_n' name='foo[problems][nausea]' type='radio' value='n' />\n</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Vomitting</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_vomitting_y' name='foo[problems][vomitting]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_vomitting_n' name='foo[problems][vomitting]' type='radio' value='n' />\n</td>\n</tr>\n</table>\n</p>\n"
+    
+  end
+  
+  it "should render grid with value" do
+    @grid.required = false
+    @grid.value = [{'pain' => 'n'}, {'nausea' => 'y'}, {'vomitting' => 'y'}]
+    @grid.build.should == "<p>\n<label for='foo_problems'>Problems</label>\n<br />\n<table border='0' cellpadding='0' cellspacing='0' id='foo_problems'>\n<tr>\n<td>&nbsp;</td>\n<td style='text-align:center'>Y</td>\n<td style='text-align:center'>N</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Pain</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_pain_y' name='foo[problems][pain]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input checked='checked' id='foo_problems_pain_n' name='foo[problems][pain]' type='radio' value='n' />\n</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Nausea</td>\n<td style='border-top: 1px solid #333;'>\n<input checked='checked' id='foo_problems_nausea_y' name='foo[problems][nausea]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_nausea_n' name='foo[problems][nausea]' type='radio' value='n' />\n</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;'>Vomitting</td>\n<td style='border-top: 1px solid #333;'>\n<input checked='checked' id='foo_problems_vomitting_y' name='foo[problems][vomitting]' type='radio' value='y' />\n</td>\n<td style='border-top: 1px solid #333;'>\n<input id='foo_problems_vomitting_n' name='foo[problems][vomitting]' type='radio' value='n' />\n</td>\n</tr>\n</table>\n</p>\n"
+    
+  end
 end

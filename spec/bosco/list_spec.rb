@@ -1,76 +1,39 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Bosco::List do
+  
+  before(:all) do
+    @list = Bosco::List.new(
+      :form => 'foo',
+      :name => 'season',
+      :title => 'Favorite Season',
+      :help_text => 'Select your favorite season',
+      :required => false,
+      :options => ['Spring', 'Summer', 'Fall','Winter']
+      
+    )
+  end
+  
 
   it "should be valid" do
     Bosco::List.new.should be_true
   end
   
-  
-  it "should initialize attributes" do
-    b = Bosco::List.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
-      :required => false,
-      :options => ['Option 1', 'Option 2']
-      
-    )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
-    b.options[0].should == 'Option 1'
-    b.options[1].should == 'Option 2'
-    
-    
+  it "should render list" do
+    @list.required = false
+    @list.build.should == "<p>\n<label for='foo_season'>Favorite Season</label>\n<br />\n<select id='foo_season' name='foo[season]'>\n<option value='spring'>Spring</option>\n<option value='summer'>Summer</option>\n<option value='fall'>Fall</option>\n<option value='winter'>Winter</option>\n</select>\n</p>\n"
   end
   
   
-  it "should render basic list question in html" do
-     html = Bosco::List.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :options => ['List 1', 'List 2']
-     ).build
- 
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /select data-required='false' id='myform1_mytext'/
-     html.should =~ /<option value='List 1'>List 1<\/option>/
-     html.should =~ /<option value='List 2'>List 2<\/option>/
-
-     html.should =~ /<\/p>/
- 
+  it "should render required list" do
+    @list.required = true
+    @list.build.should == "<p>\n<label class='required' for='foo_season'>Favorite Season</label>\n<br />\n<select data-required='true' id='foo_season' name='foo[season]'>\n<option value='spring'>Spring</option>\n<option value='summer'>Summer</option>\n<option value='fall'>Fall</option>\n<option value='winter'>Winter</option>\n</select>\n</p>\n"
   end
-
-  it "should render basic list question in html" do
-     html = Bosco::List.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :options => ['List 1', 'List 2'],
-       :value => 'List 2'
-     ).build
- 
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /select data-required='false' id='myform1_mytext'/
-     html.should =~ /<option value='List 1'>List 1<\/option>/
-     html.should =~ /<option(.*)selected='true'(.*)value='List 2'>List 2<\/option>/
-
-     html.should =~ /<\/p>/
- 
+  
+  it "should render list with summer selected" do
+    @list.required = false
+    @list.value = 'summer'
+    @list.build.should == "<p>\n<label for='foo_season'>Favorite Season</label>\n<br />\n<select id='foo_season' name='foo[season]'>\n<option value='spring'>Spring</option>\n<option selected='true' value='summer'>Summer</option>\n<option value='fall'>Fall</option>\n<option value='winter'>Winter</option>\n</select>\n</p>\n"
   end
 
   

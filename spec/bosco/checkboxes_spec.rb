@@ -2,147 +2,37 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Bosco::Checkboxes do
 
+  before(:all) do
+    @checkboxes = Bosco::Checkboxes.new(
+      :form => 'foo',
+      :name => 'toys',
+      :title => 'Favorite Toys',
+      :help_text => 'Select your favorite toys',
+      :required => false,
+      :options => ['Legos', 'Ball', 'Robot', 'Dolls', 'Music Toys', 'Board Games']    
+    )
+  end
+  
+
   it "should be valid" do
     Bosco::Checkboxes.new.should be_true
-  end
+  end  
   
-  
-  it "should initialize attributes" do
-    b = Bosco::Checkboxes.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
-      :required => false,
-      :options => ['Option 1', 'Option 2']
-      
-    )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
-    b.options[0].should == 'Option 1'
-    b.options[1].should == 'Option 2'
-    
-    
+  it "should render checkboxes question" do
+    @checkboxes.required = false
+    @checkboxes.build.should == "<p>\n<label for='foo_toys'>Favorite Toys</label>\n<br />\n<div id='foo_toys'>\n<input id='foo_toys_legos' name='foo[toys]' type='checkbox' value='legos' />\n<label>Legos</label>\n<br />\n<input id='foo_toys_ball' name='foo[toys]' type='checkbox' value='ball' />\n<label>Ball</label>\n<br />\n<input id='foo_toys_robot' name='foo[toys]' type='checkbox' value='robot' />\n<label>Robot</label>\n<br />\n<input id='foo_toys_dolls' name='foo[toys]' type='checkbox' value='dolls' />\n<label>Dolls</label>\n<br />\n<input id='foo_toys_music toys' name='foo[toys]' type='checkbox' value='music toys' />\n<label>Music Toys</label>\n<br />\n<input id='foo_toys_board games' name='foo[toys]' type='checkbox' value='board games' />\n<label>Board Games</label>\n<br />\n</div>\n</p>\n"
   end
 
-  it "should initialize attributes" do
-    b = Bosco::Checkboxes.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
-      :required => false,
-      :options => ['Option 1', 'Option 2']
-      
-    )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
-    b.options[0].should == 'Option 1'
-    b.options[1].should == 'Option 2'
-    
-    
-  end
-  
-  
-  it "should render basic text question in html" do
-     html = Bosco::Checkboxes.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :options => ['Option 1', 'Option 2']
-     ).build
- 
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /input/
-     html.should =~ /type='checkbox'/   
-     html.should =~ /id='myform1_mytext'/
-     html.should =~ /name='myform1\[mytext\]'/
-     html.should =~ /value='Option 1'/
-     html.should =~ /<label>Option 1<\/label>/
-
-     html.should =~ /input/
-     html.should =~ /type='checkbox'/   
-     html.should =~ /id='myform1_mytext'/
-     html.should =~ /name='myform1\[mytext\]'/
-     html.should =~ /value='Option 2'/
-     html.should =~ /<label>Option 2<\/label>/
-
-     html.should =~ /<\/p>/
- 
-  end
-  # 
-  it "should render basic text question in html" do
-    html = Bosco::Checkboxes.new(
-      :form => 'myform2',
-      :name => 'mytext2',
-      :title => 'SomeTitle',
-      :help_text => 'Enter your Title.',
-      :required => false,
-      :options => ['Option 1', 'Option 2']
-    ).build
-    
-    html.should =~ /<p>/
-    html.should =~ /<label for='myform2_mytext2'>SomeTitle<\/label>/
-    html.should =~ /<br \/>/
-    html.should =~ /input/
-    html.should =~ /type='checkbox'/   
-    html.should =~ /id='myform2_mytext2'/
-    html.should =~ /name='myform2\[mytext2\]'/
-    html.should =~ /value='Option 1'/
-    html.should =~ /<label>Option 1<\/label>/
-
-    html.should =~ /input/
-    html.should =~ /type='checkbox'/   
-    html.should =~ /id='myform2_mytext2'/
-    html.should =~ /name='myform2\[mytext2\]'/
-    html.should =~ /value='Option 2'/
-    html.should =~ /<label>Option 2<\/label>/
-
-    html.should =~ /<\/p>/
-    
+  it "should render required checkboxes question" do
+    @checkboxes.required = true
+    @checkboxes.build.should == "<p>\n<label class='required' for='foo_toys'>Favorite Toys</label>\n<br />\n<div data-required='true' id='foo_toys'>\n<input id='foo_toys_legos' name='foo[toys]' type='checkbox' value='legos' />\n<label>Legos</label>\n<br />\n<input id='foo_toys_ball' name='foo[toys]' type='checkbox' value='ball' />\n<label>Ball</label>\n<br />\n<input id='foo_toys_robot' name='foo[toys]' type='checkbox' value='robot' />\n<label>Robot</label>\n<br />\n<input id='foo_toys_dolls' name='foo[toys]' type='checkbox' value='dolls' />\n<label>Dolls</label>\n<br />\n<input id='foo_toys_music toys' name='foo[toys]' type='checkbox' value='music toys' />\n<label>Music Toys</label>\n<br />\n<input id='foo_toys_board games' name='foo[toys]' type='checkbox' value='board games' />\n<label>Board Games</label>\n<br />\n</div>\n</p>\n"    
   end
    
    
-  it "should render basic text question in html" do
-     html = Bosco::Checkboxes.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :options => ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-       :value => ['Option 1', 'Option 2']
-     ).build
- 
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /input(.*)checked='true'(.*)id='myform1_mytext'(.*)name='myform1\[mytext\]'(.*)type='checkbox'(.*)value='Option 1'/
-     html.should =~ /<label>Option 1<\/label>/
-
-     html.should =~ /input(.*)checked='true'(.*)id='myform1_mytext'(.*)name='myform1\[mytext\]'(.*)type='checkbox'(.*)value='Option 2'/
-     html.should =~ /<label>Option 2<\/label>/
-
-     html.should =~ /input(.*)id='myform1_mytext'(.*)name='myform1\[mytext\]'(.*)type='checkbox'(.*)value='Option 3'/
-     html.should =~ /<label>Option 3<\/label>/
-
-     html.should =~ /input(.*)id='myform1_mytext'(.*)name='myform1\[mytext\]'(.*)type='checkbox'(.*)value='Option 4'/
-     html.should =~ /<label>Option 4<\/label>/
-
-
-     html.should =~ /<\/p>/
+  it "should render checkboxes question with value" do
+    @checkboxes.required = false
+    @checkboxes.value = ['ball','robot']
+    @checkboxes.build.should == "<p>\n<label for='foo_toys'>Favorite Toys</label>\n<br />\n<div id='foo_toys'>\n<input id='foo_toys_legos' name='foo[toys]' type='checkbox' value='legos' />\n<label>Legos</label>\n<br />\n<input checked='true' id='foo_toys_ball' name='foo[toys]' type='checkbox' value='ball' />\n<label>Ball</label>\n<br />\n<input checked='true' id='foo_toys_robot' name='foo[toys]' type='checkbox' value='robot' />\n<label>Robot</label>\n<br />\n<input id='foo_toys_dolls' name='foo[toys]' type='checkbox' value='dolls' />\n<label>Dolls</label>\n<br />\n<input id='foo_toys_music toys' name='foo[toys]' type='checkbox' value='music toys' />\n<label>Music Toys</label>\n<br />\n<input id='foo_toys_board games' name='foo[toys]' type='checkbox' value='board games' />\n<label>Board Games</label>\n<br />\n</div>\n</p>\n"    
  
   end
    

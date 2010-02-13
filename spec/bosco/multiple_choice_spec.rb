@@ -1,6 +1,18 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Bosco::MultipleChoice do
+  
+  before(:all) do
+    @choices = Bosco::MultipleChoice.new(
+      :form => 'foo',
+      :name => 'color',
+      :title => 'Favorite Color',
+      :help_text => 'Select your favorite color',
+      :required => false,
+      :options => ['Red', 'Green', 'Blue', 'Yellow']    
+    ) 
+  end
+  
 
   it "should be valid" do
     Bosco::MultipleChoice.new.should be_true
@@ -8,110 +20,32 @@ describe Bosco::MultipleChoice do
   
   
   it "should initialize attributes" do
-    b = Bosco::MultipleChoice.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
-      :required => false,
-      :options => ['Option 1', 'Option 2']
-      
-    )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
-    b.options[0].should == 'Option 1'
-    b.options[1].should == 'Option 2'
-    
-    
+        
+    @choices.form.should == 'foo'
+    @choices.name.should == 'color'
+    @choices.title.should == 'Favorite Color'
+    @choices.help_text.should == 'Select your favorite color'
+    @choices.required.should == false
+    @choices.options[0].should == 'Red'
+    @choices.options[1].should == 'Green'
+    @choices.options[2].should == 'Blue'
+    @choices.options[3].should == 'Yellow'
   end
   
-  
-  it "should render basic text question in html" do
-     html = Bosco::MultipleChoice.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :options => ['Option 1', 'Option 2']
-     ).build
- 
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /input/
-     html.should =~ /type='radio'/   
-     html.should =~ /id='myform1_mytext'/
-     html.should =~ /name='myform1\[mytext\]'/
-     html.should =~ /value='Option 1'/
-     html.should =~ /<label>Option 1<\/label>/
-
-     html.should =~ /input/
-     html.should =~ /type='radio'/   
-     html.should =~ /id='myform1_mytext'/
-     html.should =~ /name='myform1\[mytext\]'/
-     html.should =~ /value='Option 2'/
-     html.should =~ /<label>Option 2<\/label>/
-
-     html.should =~ /<\/p>/
+  it "should render multiple choice question" do
+    @choices.required = false
+    @choices.build.should == "<p>\n<label for='foo_color'>Favorite Color</label>\n<br />\n<div id='foo_color'>\n<input id='foo_color_red' name='foo[color]' type='radio' value='red' />\n<label>Red</label>\n<br />\n<input id='foo_color_green' name='foo[color]' type='radio' value='green' />\n<label>Green</label>\n<br />\n<input id='foo_color_blue' name='foo[color]' type='radio' value='blue' />\n<label>Blue</label>\n<br />\n<input id='foo_color_yellow' name='foo[color]' type='radio' value='yellow' />\n<label>Yellow</label>\n<br />\n</div>\n</p>\n"
   end
 
-  it "should render basic text question in html" do
-     html = Bosco::MultipleChoice.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :options => ['Option 1', 'Option 2'],
-       :value => 'Option 1'
-     ).build
- 
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /input/
-     html.should =~ /type='radio'/   
-     html.should =~ /id='myform1_mytext'/
-     html.should =~ /name='myform1\[mytext\]'/
-     html.should =~ /checked='true'(.*)value='Option 1'/
-     html.should =~ /<label>Option 1<\/label>/
-
-     html.should =~ /input/
-     html.should =~ /type='radio'/   
-     html.should =~ /id='myform1_mytext'/
-     html.should =~ /name='myform1\[mytext\]'/
-     html.should =~ /value='Option 2'/
-     html.should =~ /<label>Option 2<\/label>/
-
-     html.should =~ /<\/p>/
-     
-     #puts html
+  it "should render required multiple choice question" do
+    @choices.required = true
+    @choices.build.should == "<p>\n<label class='required' for='foo_color'>Favorite Color</label>\n<br />\n<div data-required='true' id='foo_color'>\n<input id='foo_color_red' name='foo[color]' type='radio' value='red' />\n<label>Red</label>\n<br />\n<input id='foo_color_green' name='foo[color]' type='radio' value='green' />\n<label>Green</label>\n<br />\n<input id='foo_color_blue' name='foo[color]' type='radio' value='blue' />\n<label>Blue</label>\n<br />\n<input id='foo_color_yellow' name='foo[color]' type='radio' value='yellow' />\n<label>Yellow</label>\n<br />\n</div>\n</p>\n"
   end
 
-  # 
-  # it "should render basic text question in html" do
-  #   html = Bosco::MultipleChoice.new(
-  #     :form => 'myform2',
-  #     :name => 'mytext2',
-  #     :title => 'SomeTitle',
-  #     :help_text => 'Enter your Title.',
-  #     :required => false
-  #   ).build
-  #   
-  #   html.should =~ /<p>/
-  #   html.should =~ /<label for='myform2_mytext2'>SomeTitle<\/label>/
-  #   html.should =~ /<br \/>/
-  #   html.should =~ /textarea/
-  #   html.should =~ /id='myform2_mytext2'/
-  #   html.should =~ /name='myform2\[mytext2\]'/
-  #   html.should =~ /<\/p>/
-  #   
-  # end
-  # 
-  
+  it "should render multiple choice question with value" do
+    @choices.required = false
+    @choices.value = 'red'
+    @choices.build.should == "<p>\n<label for='foo_color'>Favorite Color</label>\n<br />\n<div id='foo_color'>\n<input checked='true' id='foo_color_red' name='foo[color]' type='radio' value='red' />\n<label>Red</label>\n<br />\n<input id='foo_color_green' name='foo[color]' type='radio' value='green' />\n<label>Green</label>\n<br />\n<input id='foo_color_blue' name='foo[color]' type='radio' value='blue' />\n<label>Blue</label>\n<br />\n<input id='foo_color_yellow' name='foo[color]' type='radio' value='yellow' />\n<label>Yellow</label>\n<br />\n</div>\n</p>\n"
+  end
+
 end

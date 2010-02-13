@@ -1,95 +1,51 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Bosco::Text do
+  
+  before(:all) do
+    @bosco = Bosco::Text.new(
+      :form => 'foo',
+      :name => 'name',
+      :title => 'Name',
+      :help_text => 'Please enter name',
+      :required => false
+    )
+  end
+  
 
   it "should be valid" do
     Bosco::Text.new.should be_true
   end
   
   
-  it "should initialize attributes" do
-    b = Bosco::Text.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
-      :required => false
-      
-    )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
+  it "should initialize attributes" do    
+    @bosco.form.should == 'foo'
+    @bosco.name.should == 'name'
+    @bosco.title.should == 'Name'
+    @bosco.help_text.should == 'Please enter name'
+    @bosco.required.should == false
     
   end
   
   
-  it "should render basic text question in html" do
-    html = Bosco::Text.new(
-      :form => 'myform1',
-      :name => 'mytext',
-      :title => 'Name',
-      :help_text => 'Enter your Name.',
-      :required => true
-    ).build
-    
-    html.should =~ /<p>/
-    html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-    html.should =~ /<br \/>/
-    html.should =~ /input/
-    html.should =~ /type='text'/
-    html.should =~ /id='myform1_mytext'/
-    html.should =~ /name='myform1\[mytext\]'/
-    html.should =~ /data-required='true'/
-
-    html.should =~ /<\/p>/
+  it "should render basic text question that is required in html" do
+    @bosco.required = true
+    html = @bosco.build
+    html.should == "<p>\n<label class='required' for='foo_name'>Name</label>\n<br />\n<input data-required='true' id='foo_name' name='foo[name]' type='text' />\n</p>\n"
   end
 
-  it "should render basic text question in html" do
-    html = Bosco::Text.new(
-      :form => 'myform2',
-      :name => 'mytext2',
-      :title => 'SomeTitle',
-      :help_text => 'Enter your Title.',
-      :required => false
-    ).build
-    
-    html.should =~ /<p>/
-    html.should =~ /<label for='myform2_mytext2'>SomeTitle<\/label>/
-    html.should =~ /<br \/>/
-    html.should =~ /input/
-    html.should =~ /type='text'/
-    html.should =~ /id='myform2_mytext2'/
-    html.should =~ /name='myform2\[mytext2\]'/
-    html.should =~ /data-required='false'/
-
-    html.should =~ /<\/p>/
-    
+  it "should render text question that is not required in html" do
+    @bosco.required = false
+    html = @bosco.build
+    html.should == "<p>\n<label for='foo_name'>Name</label>\n<br />\n<input data-required='false' id='foo_name' name='foo[name]' type='text' />\n</p>\n"
+        
   end
   
   it "should render basic text question in html" do
-    html = Bosco::Text.new(
-      :form => 'myform1',
-      :name => 'mytext',
-      :title => 'Name',
-      :help_text => 'Enter your Name.',
-      :required => true,
-      :value => 'Johnny'
-    ).build
-    
-    html.should =~ /<p>/
-    html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-    html.should =~ /<br \/>/
-    html.should =~ /input/
-    html.should =~ /type='text'/
-    html.should =~ /id='myform1_mytext'/
-    html.should =~ /name='myform1\[mytext\]'/
-    html.should =~ /value='Johnny'/
-    html.should =~ /data-required='true'/
-
-    html.should =~ /<\/p>/
+    @bosco.required = true
+    @bosco.value = 'Trey Wilson'
+    html = @bosco.build
+    html.should == "<p>\n<label class='required' for='foo_name'>Name</label>\n<br />\n<input data-required='true' id='foo_name' name='foo[name]' type='text' value='Trey Wilson' />\n</p>\n"
   end
   
   

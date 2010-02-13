@@ -2,152 +2,40 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Bosco::Scale do
 
+  before(:all) do
+    @scale = Bosco::Scale.new(
+      :form => 'foo',
+      :name => 'pain',
+      :title => 'Pain',
+      :help_text => 'Enter your pain score',
+      :required => false,
+      :start_value => 1,
+      :stop_value => 10,
+      :start_label => 'No Pain',
+      :stop_label => 'Extreme Pain'
+      
+    )
+  end
+  
   it "should be valid" do
     Bosco::Scale.new.should be_true
   end
   
-  
-  it "should initialize attributes" do
-    b = Bosco::Scale.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
-      :required => false,
-      :start_value => 1,
-      :stop_value => 5,
-      :start_label => 'Min',
-      :stop_label => 'Max'
-      
-    )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
-    b.start_value.should == 1
-    b.stop_value.should == 5
-    b.start_label.should == 'Min'
-    b.stop_label.should == 'Max'
-    
-    
-    
+  it "should render scale" do
+    @scale.required = false
+    @scale.build.should == "<p>\n<label for='foo_pain'>Pain</label>\n<br />\n<table border='0' cellpadding='0' cellspacing='0' id='foo_pain'>\n<tr>\n<td>&nbsp;</td>\n<td style='text-align:center'>1</td>\n<td style='text-align:center'>2</td>\n<td style='text-align:center'>3</td>\n<td style='text-align:center'>4</td>\n<td style='text-align:center'>5</td>\n<td style='text-align:center'>6</td>\n<td style='text-align:center'>7</td>\n<td style='text-align:center'>8</td>\n<td style='text-align:center'>9</td>\n<td style='text-align:center'>10</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>No Pain</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_1' name='foo[pain]' type='radio' value='1' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_2' name='foo[pain]' type='radio' value='2' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_3' name='foo[pain]' type='radio' value='3' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_4' name='foo[pain]' type='radio' value='4' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_5' name='foo[pain]' type='radio' value='5' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_6' name='foo[pain]' type='radio' value='6' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_7' name='foo[pain]' type='radio' value='7' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_8' name='foo[pain]' type='radio' value='8' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_9' name='foo[pain]' type='radio' value='9' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_10' name='foo[pain]' type='radio' value='10' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>Extreme Pain</td>\n</tr>\n</table>\n</p>\n"
   end
   
   
-  it "should render basic text question in html" do
-     html = Bosco::Scale.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :start_value => 1,
-       :stop_value => 5,
-       :start_label => 'Min',
-       :stop_label => 'Max'
-
-       
-     ).build
-   
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /<label>Min<\/label>/
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='1' \/>/
-     html.should =~ /<label>1<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='2' \/>/
-     html.should =~ /<label>2<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='3' \/>/
-     html.should =~ /<label>3<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='4' \/>/
-     html.should =~ /<label>4<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='5' \/>/
-     html.should =~ /<label>5<\/label>/    
-
-     html.should =~ /<label>Max<\/label>/
-  
-     html.should =~ /<\/p>/
-        
+  it "should render scale required" do
+    @scale.required = true
+    @scale.build.should == "<p>\n<label class='required' for='foo_pain'>Pain</label>\n<br />\n<table border='0' cellpadding='0' cellspacing='0' data-required='true' id='foo_pain'>\n<tr>\n<td>&nbsp;</td>\n<td style='text-align:center'>1</td>\n<td style='text-align:center'>2</td>\n<td style='text-align:center'>3</td>\n<td style='text-align:center'>4</td>\n<td style='text-align:center'>5</td>\n<td style='text-align:center'>6</td>\n<td style='text-align:center'>7</td>\n<td style='text-align:center'>8</td>\n<td style='text-align:center'>9</td>\n<td style='text-align:center'>10</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>No Pain</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_1' name='foo[pain]' type='radio' value='1' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_2' name='foo[pain]' type='radio' value='2' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_3' name='foo[pain]' type='radio' value='3' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_4' name='foo[pain]' type='radio' value='4' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_5' name='foo[pain]' type='radio' value='5' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_6' name='foo[pain]' type='radio' value='6' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_7' name='foo[pain]' type='radio' value='7' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_8' name='foo[pain]' type='radio' value='8' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_9' name='foo[pain]' type='radio' value='9' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_10' name='foo[pain]' type='radio' value='10' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>Extreme Pain</td>\n</tr>\n</table>\n</p>\n"
   end
-
-  it "should render basic text question in html" do
-     html = Bosco::Scale.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :start_value => 3,
-       :stop_value => 8,
-       :start_label => 'Start',
-       :stop_label => 'Finish'
-
-       
-     ).build
-   
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /<label>Start<\/label>/
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='3' \/>/
-     html.should =~ /<label>3<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='4' \/>/
-     html.should =~ /<label>4<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='5' \/>/
-     html.should =~ /<label>5<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='6' \/>/
-     html.should =~ /<label>6<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='7' \/>/
-     html.should =~ /<label>7<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='8' \/>/
-     html.should =~ /<label>8<\/label>/    
-
-     html.should =~ /<label>Finish<\/label>/
   
-     html.should =~ /<\/p>/
-   
+  it "should render scale with value" do
+    @scale.required = false
+    @scale.value = 4
+    @scale.build.should == "<p>\n<label for='foo_pain'>Pain</label>\n<br />\n<table border='0' cellpadding='0' cellspacing='0' id='foo_pain'>\n<tr>\n<td>&nbsp;</td>\n<td style='text-align:center'>1</td>\n<td style='text-align:center'>2</td>\n<td style='text-align:center'>3</td>\n<td style='text-align:center'>4</td>\n<td style='text-align:center'>5</td>\n<td style='text-align:center'>6</td>\n<td style='text-align:center'>7</td>\n<td style='text-align:center'>8</td>\n<td style='text-align:center'>9</td>\n<td style='text-align:center'>10</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>No Pain</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_1' name='foo[pain]' type='radio' value='1' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_2' name='foo[pain]' type='radio' value='2' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_3' name='foo[pain]' type='radio' value='3' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input checked='true' id='foo_pain_4' name='foo[pain]' type='radio' value='4' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_5' name='foo[pain]' type='radio' value='5' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_6' name='foo[pain]' type='radio' value='6' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_7' name='foo[pain]' type='radio' value='7' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_8' name='foo[pain]' type='radio' value='8' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_9' name='foo[pain]' type='radio' value='9' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>\n<input id='foo_pain_10' name='foo[pain]' type='radio' value='10' />\n</td>\n<td style='border-top: 1px solid #333;border-bottom: 1px solid #333;'>Extreme Pain</td>\n</tr>\n</table>\n</p>\n"
+    
   end
-
-  it "should render basic text question in html" do
-     html = Bosco::Scale.new(
-       :form => 'myform1',
-       :name => 'mytext',
-       :title => 'Name',
-       :help_text => 'Enter your Name.',
-       :required => false,
-       :start_value => 3,
-       :stop_value => 8,
-       :start_label => 'Start',
-       :stop_label => 'Finish',
-       :value => 5
-
-       
-     ).build
-   
-     html.should =~ /<p>/
-     html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-     html.should =~ /<br \/>/
-     html.should =~ /<label>Start<\/label>/
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='3' \/>/
-     html.should =~ /<label>3<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='4' \/>/
-     html.should =~ /<label>4<\/label>/    
-     html.should =~ /<input(.*)checked='true'(.*)id='myform1_mytext'(.*)name='myform1\[mytext\]'(.*)type='radio'(.*)value='5'(.*)\/>/
-     html.should =~ /<label>5<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='6' \/>/
-     html.should =~ /<label>6<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='7' \/>/
-     html.should =~ /<label>7<\/label>/    
-     html.should =~ /<input id='myform1_mytext' name='myform1\[mytext\]' type='radio' value='8' \/>/
-     html.should =~ /<label>8<\/label>/    
-
-     html.should =~ /<label>Finish<\/label>/
-  
-     html.should =~ /<\/p>/
-   
-  end
-
-  
 end

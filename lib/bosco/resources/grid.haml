@@ -1,9 +1,15 @@
 %p  
-  %label{:for => "#{form}_#{name}"}= title
+  %label{:for => "#{form}_#{name}", :class => required ? 'required' : false }= title
   %br
-  - rows.each_with_index do |r, i| 
-    %label= r
-    - columns.each do |c|
-      %input{:type => 'radio', :id => "#{form}_#{name}_#{r}_#{c}", :name => "#{form}[#{name}_#{r}]", :value => c, :checked => value && value.index({r => c}) ? true : false }     
-      %label= c
-    %br
+  %table{:id => "#{form}_#{name}",:border => 0, :cellspacing => 0, :cellpadding => 0, "data-required" => required ? required.to_s : false}
+    %tr
+      %td &nbsp;
+      - columns.each do |c|
+        %td{:style => 'text-align:center'}= c
+        
+    - rows.each_with_index do |r, i| 
+      %tr
+        %td{:style => 'border-top: 1px solid #333;'}= r
+        - columns.each do |c|
+          %td{:style => 'border-top: 1px solid #333;'}
+            %input{:type => 'radio', :id => "#{form}_#{name}_#{r.underscore}_#{c.underscore}", :name => "#{form}[#{name}][#{r.underscore}]", :value => c.underscore, :checked => value && value.index({r.underscore => c.underscore}) ? true : false }     

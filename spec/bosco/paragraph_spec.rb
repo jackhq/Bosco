@@ -2,88 +2,46 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Bosco::Paragraph do
 
+  before(:all) do
+    @paragraph = Bosco::Paragraph.new(
+      :form => 'foo',
+      :name => 'address',
+      :title => 'Address',
+      :help_text => 'Please enter your address',
+      :required => false    
+    )
+  end
+
   it "should be valid" do
     Bosco::Paragraph.new.should be_true
   end
   
   
-  it "should initialize attributes" do
-    b = Bosco::Paragraph.new(
-      :form => 'myform',
-      :name => 'myquestion',
-      :title => 'mytitle',
-      :help_text => 'myhelp',
-      :required => false
-      
-    )
-    
-    b.form.should == 'myform'
-    b.name.should == 'myquestion'
-    b.title.should == 'mytitle'
-    b.help_text.should == 'myhelp'
-    b.required.should == false
-    
+  it "should initialize attributes" do    
+    @paragraph.form.should == 'foo'
+    @paragraph.name.should == 'address'
+    @paragraph.title.should == 'Address'
+    @paragraph.help_text.should == 'Please enter your address'
+    @paragraph.required.should == false
   end
   
   
-  it "should render basic text question in html" do
-    html = Bosco::Paragraph.new(
-      :form => 'myform1',
-      :name => 'mytext',
-      :title => 'Name',
-      :help_text => 'Enter your Name.',
-      :required => false
-    ).build
-    
-    html.should =~ /<p>/
-    html.should =~ /<label for='myform1_mytext'>Name<\/label>/
-    html.should =~ /<br \/>/
-    html.should =~ /textarea/
-    html.should =~ /myform1_mytext/
-    html.should =~ /name='myform1\[mytext\]'/
-    html.should =~ /<\/p>/
+  it "should render paragraph question with required false" do
+    html = @paragraph.build
+    html.should == "<p>\n<label for='foo_address'>Address</label>\n<br />\n<textarea data-required='false' id='foo_address' name='foo[address]'></textarea>\n</p>\n"
+  end
+
+  it "should render basic paragraph question with required true" do
+    @paragraph.required = true
+    html = @paragraph.build
+    html.should == "<p>\n<label class='required' for='foo_address'>Address</label>\n<br />\n<textarea data-required='true' id='foo_address' name='foo[address]'></textarea>\n</p>\n"
     
   end
 
-  it "should render basic text question in html" do
-    html = Bosco::Paragraph.new(
-      :form => 'myform2',
-      :name => 'mytext2',
-      :title => 'SomeTitle',
-      :help_text => 'Enter your Title.',
-      :required => false
-    ).build
-    
-    html.should =~ /<p>/
-    html.should =~ /<label for='myform2_mytext2'>SomeTitle<\/label>/
-    html.should =~ /<br \/>/
-    html.should =~ /textarea/
-    html.should =~ /id='myform2_mytext2'/
-    html.should =~ /name='myform2\[mytext2\]'/
-    html.should =~ /<\/p>/
-    
-  end
-
-  it "should render basic text question in html" do
-    html = Bosco::Paragraph.new(
-      :form => 'myform2',
-      :name => 'mytext2',
-      :title => 'SomeTitle',
-      :help_text => 'Enter your Title.',
-      :required => false,
-      :value => 'The lazy brown fox walked to the market.'
-    ).build
-    
-    html.should =~ /<p>/
-    html.should =~ /<label for='myform2_mytext2'>SomeTitle<\/label>/
-    html.should =~ /<br \/>/
-    html.should =~ /textarea/
-    html.should =~ /id='myform2_mytext2'/
-    html.should =~ /name='myform2\[mytext2\]'/
-    html.should =~ /textarea(.*)The lazy brown fox walked to the market./
-    
-    html.should =~ /<\/p>/
-    
+  it "should render paragraph question with value" do
+    @paragraph.value = 'The little blue engine went, I think I can, I think I can!'
+    html = @paragraph.build
+    html.should == "<p>\n<label class='required' for='foo_address'>Address</label>\n<br />\n<textarea data-required='true' id='foo_address' name='foo[address]'>The little blue engine went, I think I can, I think I can!</textarea>\n</p>\n"
   end
   
   

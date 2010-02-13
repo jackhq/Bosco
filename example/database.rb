@@ -19,22 +19,18 @@ class Result < Sequel::Model
   end
   
   def save_items(data, form)
-    # # Then we need to create a item record for each attribute
     form[:pages].each do |p|
       p[:questions].each do |q|
         value = nil
         if q[:type] == 'grid'
           value = []
-          # Build Hash Array as value
           data.each do |k, v|
             if k =~ /#{q[:name]}_(.*)/
               value << { k.split('_').pop => v}
             end
           end
-          # We need to serialize by converting to json
           value = value.to_json
         else
-          # Find name of result
           value = data[q[:name].to_s]
         end
                 

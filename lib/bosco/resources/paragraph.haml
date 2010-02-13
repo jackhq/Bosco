@@ -1,4 +1,4 @@
 %p
-  %label{:for => "#{form}_#{name}"}= title
+  %label{:for => "#{form}_#{name}", :class => required ? 'required' : false }= title
   %br
   %textarea{:id => "#{form}_#{name}", :name => "#{form}[#{name}]", "data-required" => required.to_s}= value
