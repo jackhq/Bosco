@@ -4,10 +4,6 @@
   - rows.each_with_index do |r, i| 
     %label= r
     - columns.each do |c|
-      - if answer_list && answer_list[i] && answer_list[i][r] == c 
-        %input{:type => 'radio', :id => "#{form}_#{name}_#{r}_#{c}", :name => "#{form}[#{name}_#{r}]", :value => c, :checked => true }
-      - else
-        %input{:type => 'radio', :id => "#{form}_#{name}_#{r}_#{c}", :name => "#{form}[#{name}_#{r}]", :value => c }
-      
+      %input{:type => 'radio', :id => "#{form}_#{name}_#{r}_#{c}", :name => "#{form}[#{name}_#{r}]", :value => c, :checked => value && value.index({r => c}) ? true : false }     
       %label= c
     %br
