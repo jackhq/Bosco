@@ -33,6 +33,7 @@ module Bosco
     def build_output(locals=nil)
       Bosco::Output.new(:output => @output, :locals => locals).build
     end
+        
             
   end
 

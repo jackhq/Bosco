@@ -1,5 +1,7 @@
 .errors
   %ul
-  
+    - errors.each do |e|
+      %li= e
+
 %form{:action => form_action, :method => form_method}
   = yield

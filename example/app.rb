@@ -21,22 +21,24 @@ before do
 end
 
 get '/' do
-  haml @engine.build_form('/form/create', 'post')
-  
-   
+  haml @engine.build_form('/form/create', 'post')  
 end
 
 post '/form/create' do
-  # Need to create result record
-  @result = Result.create(
-    :template_name => 'form.json',
-    :form_name => @engine.form.name,
-    :output => @engine.build_output(params["foo"])
-  )
+  if @engine.form.is_valid?(params["foo"])
+    # Need to create result record
+    @result = Result.create(
+      :template_name => 'form.json',
+      :form_name => @engine.form.name,
+      :output => @engine.build_output(params["foo"])
+    )
   
-  @result.save_items(params["foo"], @engine.form)
-
-  haml :index
+    @result.save_items(params["foo"], @engine.form)
+    haml :index
+  else
+    haml @engine.build_form('/form/create', 'post', params["foo"])      
+  end
+  
 end
 
 get "/form/:id/edit" do |id|

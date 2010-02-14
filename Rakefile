@@ -9,10 +9,12 @@ begin
     gem.description = %Q{TODO: longer description of your gem}
     gem.email = "thing2@jackhq.com"
     gem.homepage = "http://github.com/jackhq/bosco"
-    gem.authors = ["Tom & Russell"]
+    gem.authors = ["Tom Wilson"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_dependency "haml", ">= 2.2.17"
     gem.add_dependency "activesupport", ">= 2.3.5"
+    gem.add_dependency "validatable"
+    
     
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

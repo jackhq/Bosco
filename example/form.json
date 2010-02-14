@@ -8,7 +8,8 @@
               "type": "text",
               "name": "name",
               "title": "Name",
-              "help_text": "What is your name?"
+              "help_text": "What is your name?",
+              "required": true
           },
           {
               "type": "paragraph",
@@ -47,7 +48,8 @@
               "start_value": 1,
               "stop_value":  5,
               "start_label":  "Bad",
-              "stop_label":  "Good"
+              "stop_label":  "Good",
+              "required": true
           },
           {
               "type": "grid",

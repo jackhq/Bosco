@@ -1,9 +1,10 @@
 module Bosco 
   class Form < Bosco::Base
-    attr_accessor :pages, :form_action, :form_method, :button
+    attr_accessor :pages, :form_action, :form_method, :button, :errors
     
     def initialize(attributes=nil)
       super
+      @errors = []
       @pages = []
       attributes[:pages].each do |p|
         @pages << Bosco::Page.new(p.merge(:form => self.name))
@@ -11,6 +12,7 @@ module Bosco
       @button = Bosco::Button.new(:title => 'submit')
       @form_action = attributes[:action] if attributes
       @form_method = attributes[:method] if attributes
+
 
     end
         
@@ -29,7 +31,20 @@ module Bosco
     end
     
     def attributes
-      super.merge(:pages => @pages, :form_action => @form_action, :form_method => @form_method)
+      super.merge(:pages => @pages, :form_action => @form_action, :form_method => @form_method, :errors => @errors)
+    end
+    
+    def is_valid?(data)
+      result = true
+      pages.each do |p|
+        p.questions.each do |q|
+          if (data[q.name].nil? or data[q.name].empty?) and q.required
+            result = false 
+            @errors << "#{q.title} is required."
+          end
+        end
+      end
+      result
     end
     
   end

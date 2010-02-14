@@ -26,14 +26,14 @@ JAVASCRIPT
             :name => 'mytext2',
             :title => 'SomeTitle',
             :help_text => 'Enter your Title.',
-            :required => false 
+            :required => true 
           },
           {
             :type => 'paragraph',
             :name => 'myparagraph',
             :title => 'Big Paragraph',
             :help_text => 'Sweet',
-            :required => false 
+            :required => true 
           }]
         }]
 
@@ -88,6 +88,13 @@ JAVASCRIPT
     html.should =~ /textarea(.*)Good bye World(.*)textarea/
     
     #puts html
+    
+  end
+
+  it "should implement is_valid?" do
+    @main.form.is_valid?("mytext2" => "Hello World").should be_false
+    @main.form.errors.count.should == 1
+    @main.form.errors[0].should == "Big Paragraph is required."
     
   end
   

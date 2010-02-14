@@ -1,8 +1,12 @@
 module Bosco 
   class Base
+    # include Validatable
+    # validates_presence_of :value, :if => Proc.new { required }
     
     attr_accessor :form, :name, :title, :help_text, :required, :value
 
+    
+    
     def initialize(attributes=nil)
       if attributes
         
