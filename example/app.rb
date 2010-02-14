@@ -5,6 +5,7 @@ require 'sequel'
 require 'database'
 require 'json'
 
+
 require File.dirname(__FILE__) + '/../lib/bosco'
 
 
@@ -29,7 +30,7 @@ post '/form/create' do
   # Need to create result record
   @result = Result.create(
     :template_name => 'form.json',
-    :form_name => @engine.form[:name],
+    :form_name => @engine.form.name,
     :output => @engine.build_output(params["foo"])
   )
   

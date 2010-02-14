@@ -32,8 +32,8 @@ describe Bosco::Form do
 
           ]
       }],
-      :form_method => '/',
-      :form_action => 'post'      
+      :method => '/',
+      :action => 'post'      
     )
     
     b.form.should == 'myform'

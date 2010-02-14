@@ -1,6 +1,8 @@
 { 
   "form": {
-      "name": "foo", 
+      "name": "foo",
+      "action": "/form/create",
+      "method": "post", 
       "pages": [{
           "questions": [{
               "type": "text",
@@ -60,7 +62,7 @@
           ]
        }]
    },
-   "output": "Hello #{name}, <br /> How are you doing at #{address}, It seems your mood is a #{mood} today.",
+   "output": "Hello #{name}, <br /> How are you doing at #{address}, It seems your mood is a #{mood if mood} today.",
    "css": "label { font-size:1em; }",
    "javascript": ""  
 }

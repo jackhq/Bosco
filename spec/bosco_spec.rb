@@ -18,8 +18,8 @@ JAVASCRIPT
     @main = Bosco::Engine.new(
       :form => { 
         :name => 'myform', 
-        :form_action => '/', 
-        :form_method => 'post',
+        :action => '/', 
+        :method => 'post',
         :pages => [{
           :questions => [{
             :type => 'text',
