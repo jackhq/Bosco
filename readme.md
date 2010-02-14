@@ -61,6 +61,10 @@ A form template is a ruby hash that can contain one form, multiple pages, and mu
     ], 
     :output => "Thank you #{name}, we will answer your question: #{problem} shortly"
     }
+    
+## Form Object
+
+The form object contains an is_valid? method that takes data as an attribute.
 
 
 ## Question types
@@ -74,10 +78,6 @@ A form template is a ruby hash that can contain one form, multiple pages, and mu
 * grid
 * section
 
-## Validators
-
-Each object can have some validation criteria, one is whether or not if the question is required or not, the second is a regex validator that validates the input of the data, this is ony primarly for text fields.
-
 ## Question Type Spec for text 
 
     {
@@ -86,7 +86,6 @@ Each object can have some validation criteria, one is whether or not if the ques
       :help_text => '',
       :type => 'text',
       :required => true,
-      :regex => /^[red|green]$/,
       :value => 'red'
     }
 
