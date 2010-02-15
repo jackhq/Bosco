@@ -10,18 +10,34 @@ class App < Sinatra::Default
   end
   
   get '/hpi' do
-    template = Crack::JSON.parse(open('hpi.json').read)
-    haml @engine = Bosco::Engine.new(
-      :form => template["form"],
-      :output => template["output"],
-      :css => template["css"] || '',
-      :javascript => template["javascript"] || ''
-    ).build_form
-    
+    haml bosco('hpi').build_form    
   end
   
-  post '/hpi/create' do
-    template = Crack::JSON.parse(open('hpi.json').read)
+  post '/hpi/create' do    
+    haml bosco('hpi').build_output(params['hpi'])
+  end
+  
+  
+  get '/mse' do
+    haml bosco('mse').build_form
+  end
+
+  get '/bhx' do
+    haml bosco('bhx').build_form
+  end
+  
+  get '/fra' do
+    haml bosco('fra').build_form
+  end
+  
+  get '/ia' do
+    haml bosco('ia').build_form
+  end
+  
+  
+  
+  def bosco(name)
+    template = Crack::JSON.parse(open(name + '.json').read)    
     @engine = Bosco::Engine.new(
       :form => template["form"],
       :output => template["output"],
@@ -29,43 +45,7 @@ class App < Sinatra::Default
       :javascript => template["javascript"] || ''
     )
     
-    haml @engine.build_output(params['hpi'])
   end
-  
-  
-  get '/mse' do
-    template = Crack::JSON.parse(open('mse.json').read)
-    haml @engine = Bosco::Engine.new(
-      :form => template["form"],
-      :output => template["output"],
-      :css => template["css"] || '',
-      :javascript => template["javascript"] || ''
-    ).build_form
-    
-  end
-
-  get '/bhx' do
-    template = Crack::JSON.parse(open('bhx.json').read)
-    haml @engine = Bosco::Engine.new(
-      :form => template["form"],
-      :output => template["output"],
-      :css => template["css"] || '',
-      :javascript => template["javascript"] || ''
-    ).build_form
-    
-  end
-  
-  get '/fra' do
-    template = Crack::JSON.parse(open('fra.json').read)
-    haml @engine = Bosco::Engine.new(
-      :form => template["form"],
-      :output => template["output"],
-      :css => template["css"] || '',
-      :javascript => template["javascript"] || ''
-    ).build_form
-    
-  end
-  
   
   
 

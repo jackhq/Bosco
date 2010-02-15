@@ -41,8 +41,8 @@ class App < Sinatra::Default
   
   post '/questions' do
     
-    session[:form] << params[:question].to_json
-    haml :index
+    #session[:form] << params[:question].to_json
+    haml :show, :locals =>  { :question => params[:question].to_json }
     
   end
   

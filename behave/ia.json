@@ -1,0 +1,107 @@
+{ 
+  "form": {
+      "name": "ia",
+      "action": "/ia/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "ia_section",
+            "title": "Initial Assessment"
+          },
+					{"name":"pc_physician","required":true,"title":"Primary Care Physician","help_text":"","type":"text"},
+					{"name":"pc_physician_phone","title":"Primary Care Physician (Phone)","help_text":"","type":"text"},
+					{"name":"mh_professional","required":true,"title":"Mental Health Professional","help_text":"","type":"text"},
+					{"name":"mh_professional_phone","title":"Mental Health Professional (Phone)","help_text":"","type":"text"},
+					{"name":"family_guardian","required":true,"title":"Family/Guardian","help_text":"","type":"text"},
+					{"name":"family_guardian_phone","title":"Family/Guardian (Phone)","help_text":"","type":"text"},
+					{"name":"fluent_english","title":"Fluent in English","help_text":"","type":"multiple_choice","options": ['Yes', 'No'] },
+					{"name":"primary_language","title":"Primary Language","help_text":"","type":"text"},
+					{"name":"informat(s)","title":"Informant(s)","help_text":"","type":"paragraph"},
+	        {
+            "type": "section",
+            "name": "hpi_section",
+            "title": "History of Present Illness"
+          },
+          {
+              "type": "paragraph",
+              "name": "catalyst",
+              "title": "Reason for Today's Visit",
+              "help_text": "How was the visit initiated?",
+              "required": true
+          },
+          {
+              "type": "paragraph",
+              "name": "chief_complaints",
+              "title": "Chief Complaints",
+              "help_text": "What is the reason for the visit",
+              "required": true
+          },
+          {
+              "type": "multiple_choice",
+              "name": "medication_compliance",
+              "title": "Medication Compliance",
+              "help_text": "Is the patient compliant with their medications?",
+              "options": ["Yes", "No"],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "symptoms",
+              "title": "Symptoms",
+              "help_text": "What symptoms does the patient have?",
+              "options": ['Auditory Hallucinations', 'Visual Hallucinations', 'HI','SI Thoughts','SI Plan', 'SI Intent', 'SI Means' , 'Delusions'],
+              "required": true
+          },              
+	        {
+            "type": "section",
+            "name": "pmh_section",
+            "title": "Past Medical / Surgical History"
+          },
+          {
+              "type": "multiple_choice",
+              "name": "seizure_history",
+              "title": "Seizure Histolry",
+              "help_text": "",
+              "options": ["Yes", "No"]
+          },
+          {
+              "type": "paragraph",
+              "name": "pmh_history",
+              "title": "Describe",
+              "help_text": "",
+              "required": true
+          },
+	        {
+            "type": "section",
+            "name": "pph_section",
+            "title": "Past Psychiatric History"
+          },
+          {
+              "type": "paragraph",
+              "name": "pph_history",
+              "title": "Describe",
+              "help_text": ""
+          },
+	        {
+            "type": "section",
+            "name": "ppmt_section",
+            "title": "Past Psychiatric Medication Trials and ECT"
+          },
+          {
+              "type": "paragraph",
+              "name": "ppmt_history",
+              "title": "Describe",
+              "help_text": ""
+          }
+
+
+
+  				
+
+				]
+		}]
+	}
+}
+

@@ -10,14 +10,26 @@
             "name": "background_hx",
             "title": "Background History"
           },
+          
           {
               "type": "checkboxes",
-              "name": "family_hx",
-              "title": "Family History",
+              "name": "unable_to_assess",
+              "title": "Social History",
               "help_text": "",
-              "options": ["Childhood Issues","Family Dynamics", "Socio Economic Status", "Types of Discipline", "Siblings", "Abuse"],
+              "options": ["Unable to Assess"],
               "required": true
           },
+					{"name":"sh_reason","title":"Reason","help_text":"","type":"text"},
+					{"name":"developmental_education","title":"Developmental/Education","help_text":"","type":"paragraph"},
+					{"name":"key_relationships_living_situation","title":"Key Relationships/Living Situation","help_text":"","type":"paragraph"},
+					{"name":"sexual_history","title":"Sexual History","help_text":"","type":"paragraph"},
+					{"name":"employment_hazardous_exposures","title":"Employment/Hazardous Exposures","help_text":"","type":"paragraph"},
+					{"name":"legal","title":"Legal","help_text":"","type":"paragraph"},
+					{"name":"military","title":"Military","help_text":"","type":"paragraph"},
+          {"type": "section", "name": "substance_abuse_history", "title": "Substance Abuse History" },
+          {"type": "multiple_choice", "name": "smoker_yn", "title": "Smoker", "options": ['Yes','No','Stopped'] },
+
+
           {
               "type": "section",
               "name": "personal_hx",
