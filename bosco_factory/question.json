@@ -1,0 +1,104 @@
+{ 
+  "form": {
+      "name": "question",
+      "action": "/questions",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+              "type": "text",
+              "name": "name",
+              "title": "Name",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "title",
+              "title": "Title",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "paragraph",
+              "name": "help_text",
+              "title": "HelpText",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "list",
+              "name": "type",
+              "title": "Question Type",
+              "help_text": "",
+              "options": ['Text','Paragraph','MultipleChoice','Checkboxes','List','Scale','Grid'],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "required",
+              "title": "Required",
+              "help_text": "",
+              "options": ['true'],
+              "required": true
+          }                                     
+          ]
+       },
+       { "questions": [{
+           "type": "text",
+           "name": "options",
+           "title": "Options",
+           "help_text": "",
+           "required": true
+          }]
+       },
+       { "questions": [
+          {
+           "type": "text",
+           "name": "columns",
+           "title": "Columns",
+           "help_text": "",
+           "required": true
+          },
+          {
+           "type": "text",
+           "name": "rows",
+           "title": "Rows",
+           "help_text": "",
+           "required": true
+          }
+          
+          ]
+       },
+        { "questions": [
+           {
+            "type": "scale",
+            "name": "start_value",
+            "title": "Start Value",
+            "help_text": "",
+            "start_value": 1,
+            "stop_value": 5,
+            "start_label": "",
+            "stop_label": "",
+            "required": true
+           },
+           {
+            "type": "scale",
+            "name": "stop_value",
+            "title": "Stop Value",
+            "help_text": "",
+            "start_value": 5,
+            "stop_value": 10,
+            "start_label": "",
+            "stop_label": "",
+            "required": true
+           }
+
+           ]
+        }                     
+     ]
+   },
+   "output": "",
+   "css": "label { color:red; } textarea { width:450px;height:200px }",
+   "javascript": ""  
+}

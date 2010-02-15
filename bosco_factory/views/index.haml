@@ -1,0 +1,11 @@
+.grid_16
+  %p Welcome to the Bosco Factory
+  %a{:href => '/forms/new'} Create a Bosco Form
+
+  %ul
+    - if session[:forms] 
+      - session[:forms].each do |f|
+        - f_hash = Crack::JSON.parse(f)
+        %li
+          %a{:href => "/forms/#{f_hash['name']}" }= f_hash['name']
+      

@@ -1,0 +1,8 @@
+%h1 New Form
+%form{:action => '/forms', :method => 'post' }
+  %p
+    %label Name
+    %br
+    %input{:type => 'text', :name => 'form[name]'}
+  %p
+    %input{:type => 'submit'}
