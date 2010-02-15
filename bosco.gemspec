@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
-  s.date = %q{2010-02-14}
+  s.date = %q{2010-02-15}
   s.description = %q{A tasty gem that uses a json template to generate an html form}
   s.email = %q{tom@jackhq.com}
   s.extra_rdoc_files = [
@@ -21,6 +21,26 @@ Gem::Specification.new do |s|
      "LICENSE",
      "Rakefile",
      "VERSION",
+     "behave/Gemfile",
+     "behave/app.rb",
+     "behave/bhx.json",
+     "behave/config.ru",
+     "behave/fra.json",
+     "behave/hpi.json",
+     "behave/lib/swat.rb",
+     "behave/mse.json",
+     "behave/public/images/sixhour.png",
+     "behave/public/javascripts/jquery-1.4.1.min.js",
+     "behave/public/stylesheets/960.css",
+     "behave/public/stylesheets/app.css",
+     "behave/public/stylesheets/reset.css",
+     "behave/public/stylesheets/text.css",
+     "behave/readme.md",
+     "behave/spec/app_spec.rb",
+     "behave/spec/spec.opts",
+     "behave/spec/spec_helper.rb",
+     "behave/views/index.haml",
+     "behave/views/layout.haml",
      "bosco.gemspec",
      "example/Gemfile",
      "example/app.rb",
