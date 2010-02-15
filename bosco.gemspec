@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Wilson"]
   s.date = %q{2010-02-14}
-  s.description = %q{TODO: longer description of your gem}
-  s.email = %q{thing2@jackhq.com}
+  s.description = %q{A tasty gem that uses a json template to generate an html form}
+  s.email = %q{tom@jackhq.com}
   s.extra_rdoc_files = [
     "LICENSE"
   ]
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "LICENSE",
      "Rakefile",
      "VERSION",
+     "bosco.gemspec",
      "example/Gemfile",
      "example/app.rb",
      "example/bosco.db",
@@ -79,7 +80,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{BOSCO a question generator engine}
   s.test_files = [
     "spec/bosco/base_spec.rb",
      "spec/bosco/checkboxes_spec.rb",
@@ -105,18 +106,15 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_runtime_dependency(%q<haml>, [">= 2.2.17"])
       s.add_runtime_dependency(%q<activesupport>, [">= 2.3.5"])
-      s.add_runtime_dependency(%q<validatable>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<haml>, [">= 2.2.17"])
       s.add_dependency(%q<activesupport>, [">= 2.3.5"])
-      s.add_dependency(%q<validatable>, [">= 0"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
     s.add_dependency(%q<haml>, [">= 2.2.17"])
     s.add_dependency(%q<activesupport>, [">= 2.3.5"])
-    s.add_dependency(%q<validatable>, [">= 0"])
   end
 end
 

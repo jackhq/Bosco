@@ -1,0 +1,49 @@
+{ 
+  "form": {
+      "name": "hpi",
+      "action": "/hpi/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "hpi_section",
+            "title": "History of Present Illness"
+          },
+          {
+              "type": "paragraph",
+              "name": "catalyst",
+              "title": "Reason for Today's Visit",
+              "help_text": "How was the visit initiated?",
+              "required": true
+          },
+          {
+              "type": "paragraph",
+              "name": "chief_complaints",
+              "title": "Chief Complaints",
+              "help_text": "What is the reason for the visit",
+              "required": true
+          },
+          {
+              "type": "multiple_choice",
+              "name": "medication_compliance",
+              "title": "Medication Compliance",
+              "help_text": "Is the patient compliant with their medications?",
+              "options": ["Yes", "No"],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "symptoms",
+              "title": "Symptoms",
+              "help_text": "What symptoms does the patient have?",
+              "options": ['Auditory Hallucinations', 'Visual Hallucinations', 'HI','SI - Thoughts','SI - Plan', 'SI - Intent', 'SI - Means' , 'Delusions'],
+              "required": true
+          }              
+          ]
+       }]
+   },
+   "output": "Patient is a 39 year old Caucasion Male with a history of [patient problems].  Patient presented [Practice Name] following #{catalyst} with complaints of #{chief_complaints}. Patient reports #{medication_compliance ? 'compliance' : 'non-compliance'} with medications.  Patient experiencing #{symptoms.map { |k,v| k}.to_sentence}",
+   "css": "",
+   "javascript": ""  
+}

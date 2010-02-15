@@ -1,0 +1,255 @@
+{ 
+  "form": {
+      "name": "mse",
+      "action": "/mse/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "mental_status_exam",
+            "title": "Mental Status Exam"
+          },
+          {
+              "type": "checkboxes",
+              "name": "appearance",
+              "title": "Appearance",
+              "help_text": "Appearance?",
+              "options": ['Well-groomed','Unkempt','Malodorous','Dressed Appropriately','Dressed Inappropriately', 'Appears stated age', 'Appears older than stated age', 'Appears younger than stated age'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_appearance",
+              "title": "Other Appearance",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "behavior",
+              "title": "Behavior",
+              "help_text": "",
+              "options": ['Cooperative','Minimally Cooperative','Uncooperative','Guarded','Animated','Apathetic','Good eye contact','Poor eye contact'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_behavior",
+              "title": "Other Behavior",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "motor",
+              "title": "Motor",
+              "help_text": "",
+              "options": ['Normal','Agitated','Stiff/rigid','Dyskinesia','Hypokinetic', 'Tense','Posturing','Cataplexy','Tremulous','Catatonic'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_motor",
+              "title": "Other Motor",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "speech",
+              "title": "Speech",
+              "help_text": "",
+              "options": ['Normal rate','Slow rate','Rapid rate', 'Mute', 'Normal volume','Soft volume','Loud volume','Slurred', 'Normal prosody', 'Paucity','Pressured','Dysarthric','Spontaneous','Latency of response'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_speech",
+              "title": "Other Speech",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "patient_description_mood",
+              "title": "Patient Description for Mood",
+              "help_text": "",
+              "required": true
+          },
+
+          {
+              "type": "checkboxes",
+              "name": "mood",
+              "title": "Mood",
+              "help_text": "",
+              "options": ['Euthymic','Fearful','Anhedonic','Dysphoric','Anxious','Angry','Euphoric','Elevated','Irritable','Depressed','Sad'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_mood",
+              "title": "Other Mood",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "affect",
+              "title": "Affect",
+              "help_text": "",
+              "options": ['Congruent with mood','Incongruent with mood and topic','Full range','Stable','Blunted','Flat','Constricted','Labile'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_affect",
+              "title": "Other Affect",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "perception_hallucinations",
+              "title": "Preceptions/Hallucinations",
+              "help_text": "",
+              "options": ['No Abnormal perceptions','Auditory','Visual','Tactile','Olfactory','Gustatory','Actively responding to internal stimuli'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_perception_hallucinations",
+              "title": "Other Preceptions/Hallucinations",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "thought_process",
+              "title": "Thought Process",
+              "help_text": "",
+              "options": ['Goal directed/coherent','Circumstantial','Tangential','Loose associations','Flight of ideas','Illogical','Preservation','Blocking','Disorganized'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_thought_process",
+              "title": "Other Thought Process",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "thought_content",
+              "title": "Thought Content",
+              "help_text": "",
+              "options": ['Appropriate','Paranoia','Suicidal thoughts', 'Homicidal thoughts', 'Obsessions', 'Ideas of reference','Poverty of content', 'Thought insertion','Thought broadcasting','Confabulation','Persecutory delusion','Grandiose delusion','Somatic delusion','Religous delusion'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_thought_content",
+              "title": "Other Thought Content",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "judgement",
+              "title": "Judgement",
+              "help_text": "",
+              "options": ['No impairment/critical','Mildly imparied/automatic','Significant impairment','Minimize illness'],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "insight",
+              "title": "Insight",
+              "help_text": "",
+              "options": ['No impairment/true insight','Mild impairment/intellectual insight','Significant impairment','Minimizes illness', 'Denial of illness','Blames outside factors','Age appropriate'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_insight",
+              "title": "Other Insight",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "level_of_consciousness",
+              "title": "Level of Consciousness",
+              "help_text": "",
+              "options": ['Alert','Awake','Somnolent','Sedated','Stuporous'],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "oriented_to",
+              "title": "Oriented To",
+              "help_text": "",
+              "options": ['Time', 'Place','Person','Situation'],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "concentration",
+              "title": "Concentration",
+              "help_text": "",
+              "options": ['Able','Unable to attend task'],
+              "required": true
+          },
+          {
+              "type": "multiple_choice",
+              "name": "memory_immediate_recall",
+              "title": "Memory Immediate Recall",
+              "help_text": "",
+              "options": ['1 of 3', '2 of 3', '3 of 3'],
+              "required": true
+          },
+          {
+              "type": "multiple_choice",
+              "name": "memory_delayed_recall",
+              "title": "Memory Delayed Recall",
+              "help_text": "",
+              "options": ['1 of 3', '2 of 3', '3 of 3'],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "memory",
+              "title": "Memory",
+              "help_text": "",
+              "options": ['Intact recent','Intact remote','Impaired recent','Impaired remote','Grossly intact','Confabulation'],
+              "required": true
+          },
+          {
+              "type": "text",
+              "name": "other_memory",
+              "title": "Other Memory",
+              "help_text": "",
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "intelligence",
+              "title": "Intelligence",
+              "help_text": "",
+              "options": ['Average or above','Borderline intellect','Mild Retardation','Moderate Retardation','Severe Retardation','Profound Retardation'],
+              "required": true
+          },
+          {
+              "type": "checkboxes",
+              "name": "conceptual_visuospatial",
+              "title": "Conceptual/Visuospatial",
+              "help_text": "",
+              "options": ['Grossly normal','Appropriate for age','Intact visuospatial abilities', 'Impaired visuospatial abilities (clockface)','Impaired visuospatial abilities (pentagon)','Abstract thinking','Concrete thinking (similarities)','Concrete thinking (proverbs)'],
+              "required": true
+          }]
+       }]
+   },
+   "output": "Patient is a 39 year old Caucasion Male with a history of [problems].  Patient presented ABC Practice following #{catalyst} with complaints of #{cheif_complaints}. Patient reports #{medication_compliance ? 'compliance' : 'non-compliance'} with medications.  Patient experiencing #{symptoms.to_sentence}",
+   "css": "",
+   "javascript": ""  
+}
