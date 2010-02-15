@@ -1,0 +1,22 @@
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", 'xml:lang' => "en" }
+  %head
+    %title Bosco Factory
+    - ['reset','text','960','app'].each do |css|
+      %link{ :href => "/stylesheets/#{css}.css", :rel => "stylesheet", :type => "text/css", :media => "screen", :charset => "utf-8" }
+  %body
+    #header
+      .container_12
+        %h1 Bosco - Factory
+    
+    #wrap
+      .container_16
+        = yield
+    .clear
+    #footer
+      .container_12
+        .grid_4.prefix_8
+          %p Jack Russell Software Company, LLC
+    
+    - ['jquery-1.4.1.min'].each do |js|
+      %script{:src => "/javascripts/#{js}.js", :type => 'text/javascript'}
