@@ -1,0 +1,83 @@
+{ 
+  "form": {
+      "name": "ia",
+      "action": "/ag/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "ag_section",
+            "title": "Axis and GAF Assessment"
+          },
+          {
+            "type": "paragraph",
+            "name": "axis_1",
+            "title": "Axis 1"
+          },
+          {
+            "type": "paragraph",
+            "name": "axis_2",
+            "title": "Axis 2"
+          },
+          {
+            "type": "paragraph",
+            "name": "axis_3",
+            "title": "Axis 3"
+          },
+          {
+            "type": "multiple_choice",
+            "name": "axis_4",
+            "title": "Axis 4",
+            "options": ['None known','Mild','Moderate','Severe', 'Extreme','Catatrophic']
+          },
+          {
+            "type": "multiple_choice",
+            "name": "axis_4_factors",
+            "title": "Axis 4 Factors",
+            "options": ['Problem with primary support group','Problem related to social environment','Educational problem','Occupational problem', 'Housing problem','Economic problem','Problem with access to health care services','Legal problems / crime', 'Other']
+          },
+          
+          {
+            "type": "section",
+            "name": "axis_5_section",
+            "title": "Axis 5"          
+          },
+          {
+            "type": "multiple_choice",
+            "name": "axis_5_gaf_scale",
+            "title": "Axis 5 Gaf Scale",
+            "options": [
+              '91..100 No Symptoms',
+              '81..90  Absence or minimal symptoms, good functioning',
+              '71..80  Transient, no more than slight impairment of functioning',
+              '61..70  Mild difficulties, some meaningful relationships',
+              '51..60  Moderate symptoms or impairment of function',
+              '41..50  Serious symptoms includes suicidal ideation',
+              '31..40  Major impairments in many areas',
+              '21..30  Delusions, hallucinations, sucidal preoccupation',
+              '11..20  Danger to self or others, minimal hygiene, incoherent',
+              '01..10  Persistent danger to self or others'
+            ]
+                     
+          },
+          
+          {
+            "type": "text",
+            "name": "axis_5_current_gaf",
+            "title": "Current GAF"          
+          },
+          {
+            "type": "text",
+            "name": "axis_5_last_years_gaf",
+            "title": "Last Years GAF"          
+          }
+          
+          
+          
+          ]
+      }]
+  }
+}
+      
+          

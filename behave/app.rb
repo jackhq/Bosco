@@ -34,6 +34,12 @@ class App < Sinatra::Default
     haml bosco('ia').build_form
   end
   
+  get '/ag' do
+    haml bosco('ag').build_form
+    
+  end
+  
+  
   
   
   def bosco(name)

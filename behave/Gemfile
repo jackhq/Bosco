@@ -1,3 +1,4 @@
+gem 'shotgun'
 gem 'sinatra', '0.9.4'
 gem 'haml'
 gem 'bosco'
