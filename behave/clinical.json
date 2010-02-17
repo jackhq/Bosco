@@ -1,0 +1,89 @@
+{ 
+  "form": {
+      "name": "clinical",
+      "action": "/clinical/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+						"type": "section",
+						"name": "drug_sensitivity_allergies",
+						"title": "Drug Sensitivities / Allergies  -  (list food / drug / latex / other allergies)"
+          },
+					{
+						"type": "checkboxes",
+						"name": "known_da_assess_cboxes",
+						"title": "",
+						"help_text": "",
+						"options": ['No Known Drug Allergies', 'Unable to assess (list reason below)']
+					},
+					{
+						"type": "paragraph",
+						"name": "assess_reason",
+						"title": "Reason: (if unable to assess)",
+						"help_text": ""
+					},
+					
+					{"type": "section", "name": "entry_1", "title": "Drug Sensitivity / Allergy #1", "help_text": ""},
+					{"type": "text", "name": "drug_substance_1", "title": "Drug / Substance", "help_text": ""},
+					{"type": "paragraph", "name": "reaction_1", "title": "Reaction if known:", "help_text": ""},
+					{"type": "section", "name": "entry_2", "title": "Drug Sensitivity / Allergy #2", "help_text": ""},
+					{"type": "text", "name": "drug_substance_2", "title": "Drug / Substance", "help_text": ""},
+					{"type": "paragraph", "name": "reaction_2", "title": "Reaction if known:", "help_text": ""},
+					{"type": "section", "name": "entry_3", "title": "Drug Sensitivity / Allergy #3", "help_text": ""},
+					{"type": "text", "name": "drug_substance_3", "title": "Drug / Substance", "help_text": ""},
+					{"type": "paragraph", "name": "reaction_3", "title": "Reaction if known:", "help_text": ""},
+					{"type": "section", "name": "entry_4", "title": "Drug Sensitivity / Allergy #4", "help_text": ""},
+					{"type": "text", "name": "drug_substance_4", "title": "Drug / Substance", "help_text": ""},
+					{"type": "paragraph", "name": "reaction_4", "title": "Reaction if known:", "help_text": ""},
+					
+					{
+						"type": "section",
+						"name": "current_medications",
+						"title": "Current Medications"
+					},
+					{"type": "section", "name": "title_med_1", "title": "Medication #1", "help_text": ""},
+					{"type": "text", "name": "med_1", "title": "Medication: (including herbal supplements and over-the-counter)", "help_text": ""},
+					{"type": "text", "name": "dose_1", "title": "Dose / Frequency / Route:", "help_text": ""},
+					{"type": "paragraph", "name": "comments_1", "title": "Last Dose / Comments", "help_text": ""},
+					{"type": "grid", "name": "continue_hospital_1", "title": "", "help_text": "", "columns": ['Y', 'N', '&#916;'], "rows": ['Continue in Hospital?'] },
+					{"type": "section", "name": "title_med_2", "title": "Medication #2", "help_text": ""},
+					{"type": "text", "name": "med_2", "title": "Medication: (including herbal supplements and over-the-counter)", "help_text": ""},
+					{"type": "text", "name": "dose_2", "title": "Dose / Frequency / Route:", "help_text": ""},
+					{"type": "paragraph", "name": "comments_2", "title": "Last Dose / Comments", "help_text": ""},
+					{"type": "grid", "name": "continue_hospital_2", "title": "", "help_text": "", "columns": ['Y', 'N', '&#916;'], "rows": ['Continue in Hospital?'] },
+					{"type": "section", "name": "title_med_3", "title": "Medication #3", "help_text": ""},
+					{"type": "text", "name": "med_3", "title": "Medication: (including herbal supplements and over-the-counter)", "help_text": ""},
+					{"type": "text", "name": "dose_3", "title": "Dose / Frequency / Route:", "help_text": ""},
+					{"type": "paragraph", "name": "comments_3", "title": "Last Dose / Comments", "help_text": ""},
+					{"type": "grid", "name": "continue_hospital_3", "title": "", "help_text": "", "columns": ['Y', 'N', '&#916;'], "rows": ['Continue in Hospital?'] },
+					
+					{
+						"type": "section",
+						"name": "source_med_list",
+						"title": "Source of medication list:"
+					},
+					{
+						"type": "checkboxes",
+						"name": "source_med_list_cboxes",
+						"title": "",
+						"help_text": "",
+						"options": ['Patient', 'Family / Caregiver', 'Pharmacy', 'Other', 'Home meds stored on unit']
+					},
+					{
+						"type": "text", 
+						"name": "source_name", 
+						"title": "Name of Source:", 
+						"help_text": ""
+					},
+					{
+						"type": "text", 
+						"name": "source_number", 
+						"title": "Source Phone Number:", 
+						"help_text": ""
+					}
+					
+         ]
+     }]
+  }
+}

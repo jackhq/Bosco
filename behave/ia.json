@@ -19,6 +19,7 @@
 					{"name":"fluent_english","title":"Fluent in English","help_text":"","type":"multiple_choice","options": ['Yes', 'No'] },
 					{"name":"primary_language","title":"Primary Language","help_text":"","type":"text"},
 					{"name":"informat(s)","title":"Informant(s)","help_text":"","type":"paragraph"},
+					{"name":"visit_condition","title":"Patient visit is:","help_text":"","type":"multiple_choice","options": ['Voluntary', 'Committed'] },
 	        {
             "type": "section",
             "name": "hpi_section",
@@ -34,7 +35,7 @@
           {
               "type": "paragraph",
               "name": "chief_complaints",
-              "title": "Chief Complaints",
+              "title": "Chief Complaints (Use patient's own words)",
               "help_text": "What is the reason for the visit",
               "required": true
           },

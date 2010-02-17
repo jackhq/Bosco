@@ -11,6 +11,11 @@
             "title": "Axis and GAF Assessment"
           },
           {
+            "type": "section",
+            "name": "diagnosis_section",
+            "title": "Admitting Diagnosis"
+          },
+          {
             "type": "paragraph",
             "name": "axis_1",
             "title": "Axis 1"
@@ -69,8 +74,8 @@
           },
           {
             "type": "text",
-            "name": "axis_5_last_years_gaf",
-            "title": "Last Years GAF"          
+            "name": "axis_5_highest_gaf_past_year",
+            "title": "Highest GAF Past Year"          
           }
           
           
