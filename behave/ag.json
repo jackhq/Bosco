@@ -1,6 +1,6 @@
 { 
   "form": {
-      "name": "ia",
+      "name": "ag",
       "action": "/ag/create",
       "method": "post", 
       "pages": [{
