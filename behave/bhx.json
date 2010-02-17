@@ -19,6 +19,7 @@
               "options": ["Unable to Assess"],
               "required": true
           },
+				
 					{"name":"sh_reason","title":"Reason","help_text":"","type":"text"},
 					{"name":"developmental_education","title":"Developmental/Education","help_text":"","type":"paragraph"},
 					{"name":"key_relationships_living_situation","title":"Key Relationships/Living Situation","help_text":"","type":"paragraph"},
@@ -28,9 +29,33 @@
 					{"name":"military","title":"Military","help_text":"","type":"paragraph"},
           {"type": "section", "name": "substance_abuse_history", "title": "Substance Abuse History" },
           {"type": "multiple_choice", "name": "smoker_yn", "title": "Smoker", "options": ['Yes','No','Stopped'] },
-
-
-          {
+					{"type": "text", "name": "quit_date", "title": "Quit Date", "help_text": "" },
+					{"type": "text", "name": "pack_years", "title": "# Pack Years", "help_text": ""},
+					{"type": "multiple_choice", "name": "delirium_tremens_yn", "title": "Is there a history of Delirium Tremens during alcohol withdrawal?", "options": ['Yes', 'No'] },
+					{"type": "multiple_choice", "name": "seizure_yn", "title": "Is there a history of seizure during alcohol withdrawal?", "options": ['Yes', 'No'] },
+					{"type": "paragraph", "name": "substance_paragraph", "title": "Substance_____Recent and Historical Use, Date of Last Use, Age First Used_____Withdrawal Symptoms", "help_text": ""},
+					{
+              "type": "section",
+              "name": "family_hx",
+              "title": "Family History"
+					},
+					{
+              "type": "checkboxes",
+              "name": "family_hx_unable_to_assess",
+							"title": "Unable to Assess",
+              "help_text": "",
+              "options": ["Unable to Assess"],
+              "required": true
+          },
+					{
+						"type": "text",
+						"name": "fh_reason",
+						"title": "Reason:",
+						"help_text": ""
+					},
+					{"type": "paragraph", "name": "fh_psychiatric_paragraph", "title": "Psychiatric:", "help_text": ""},
+					{"type": "paragraph", "name": "fh_medical_paragraph", "title": "Medical:", "help_text": ""},
+					{
               "type": "section",
               "name": "personal_hx",
               "title": "Personal History"
