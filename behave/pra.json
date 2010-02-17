@@ -1,0 +1,74 @@
+{ 
+  "form": {
+      "name": "pra",
+      "action": "/pra/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "pra_section",
+            "title": "Psychiatric Risk Assessment"
+          },
+					{
+						"type": "grid",
+						"name": "elopement_section",
+						"title": "ELOPEMENT",
+						"help_text": "",
+						"columns": ['Y', 'N', 'UNK'],
+						"rows": ['Intent / Wish', 'History']
+					},
+					{
+						"type": "paragraph",
+						"name": "elopement_paragraph",
+						"title": "Elopement Explanation / Clinical Comments",
+						"help_text": "Explanation of elopement assessments."
+					},
+					{
+						"type": "grid",
+						"name": "suicide_section",
+						"title": "SUICIDE",
+						"help_text": "",
+						"columns": ['Y', 'N', 'UNK'],
+						"rows": ['Passive Ideas', 'Active Plan or Intent', 'Current Means', 'Past Attempts', 'Prior Attempt in Hospital', 'Family History', 
+										 'Access to a Firearm', 'Instructed to Remove Weapon']
+					},
+					{
+						"type": "paragraph",
+						"name": "suicide_paragraph",
+						"title": "Suicide Explanation / Clinical Comments",
+						"help_text": "Explanation of suicide assessments."
+					},
+					{
+						"type": "grid",
+						"name": "violence_section",
+						"title": "VIOLENCE",
+						"help_text": "",
+						"columns": ['Y', 'N', 'UNK'],
+						"rows": ['History of Violence', 'Current Agitation', 'History of Impulsivity', 'History of Violence in Hospital']
+					},
+					{
+						"type": "paragraph",
+						"name": "suicide_paragraph",
+						"title": "Violence Explanation / Clinical Comments",
+						"help_text": "Explanation of violence assessments."
+					},
+					{
+						"type": "grid",
+						"name": "trauma_section",
+						"title": "TRAUMA",
+						"help_text": "",
+						"columns": ['Y', 'N', 'UNK'],
+						"rows": ['Physical / Domestic Abuse', 'Sexual Abuse', 'Neglect', 'Violent Crime', 'Emotional Abuse', 'Trauma in Hospital', 'Authorities Notified']
+					},
+					{
+						"type": "paragraph",
+						"name": "trauma_paragraph",
+						"title": "Trauma Explanation / Clinical Comments",
+						"help_text": "Specify nature, duration, role and age when trauma occured.  If YES to any question, assess for Post-Traumatic Stress Disorder."
+					}
+
+				]
+		}]
+	}
+}

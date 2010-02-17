@@ -17,7 +17,6 @@ class App < Sinatra::Default
     haml bosco('hpi').build_output(params['hpi'])
   end
   
-  
   get '/mse' do
     haml bosco('mse').build_form
   end
@@ -36,7 +35,10 @@ class App < Sinatra::Default
   
   get '/ag' do
     haml bosco('ag').build_form
-    
+  end
+  
+  get '/pra' do
+    haml bosco('pra').build_form
   end
   
   
