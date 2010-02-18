@@ -33,12 +33,226 @@
 						"type": "paragraph",
 						"name": "da_milestones_explanation",
 						"title": "Explanation of Abnormal Information"
+					},
+					{
+						"type": "paragraph",
+						"name": "da_styles",
+						"title": "Communication and Disciplinary Styles:"
+					},
+					{
+						"type": "section",
+						"name": "da_educational_vocational_section",
+						"title": "Educational and Vocational Information:"
+					},
+					{"type": "text", "name": "da_school_name", "title": "Name of School:" },
+					{"type": "text", "name": "da_grade", "title": "Grade:" },
+					{"type": "text", "name": "da_grades_repeated", "title": "List any grades repeated:" },
+					{"type": "text", "name": "da_special_classes", "title": "List any special classes (LD, ED, Resource, etc.):" },
+					{"type": "paragraph", "name": "da_behavior", "title": "Suspensions / behavioral issues:", "help_text": "" },
+					{"type": "text", "name": "da_grade", "title": "Grade:" },					
+					{"type": "text", "name": "da_employment", "title": "Employment:" },
+
+					{
+						"type": "section",
+						"name": "da_prev_psych_section",
+						"title": "Previous Psychological Testing"
+					},
+					{
+						"type": "checkboxes",
+						"name": "da_prev_psych_chbox",
+						"title": "Previous Psychological Testing:",
+						"help_text": "",
+						"options": ['Yes', 'No', 'Not known']
+					},
+					{
+						"type": "text",
+						"name": "da_prev_psych_dates",
+						"title": "Date(s): (if answered 'Yes')"
+					},
+					{
+						"type": "text",
+						"name": "da_prev_psych_location",
+						"title": "Location:"
+					},
+					{
+						"type": "text",
+						"name": "da_prev_psych_findings",
+						"title": "Findings:"
+					},
+					
+					{
+						"type": "section",
+						"name": "da_signif_individuals_section",
+						"title": "Significant Individuals in Patient's Life:"
+					},
+					{
+						"type": "section",
+						"name": "da_individual_1",
+						"title": "Significant Individual #1"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_1_name",
+						"title": "Name and Relationship:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_1_age",
+						"title": "Age:"
+					},
+					{					
+						"type": "text",
+						"name": "da_individual_1_home_phone",
+						"title": "Home Phone:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_1_work_phone",
+						"title": "Work Phone:"
+					},						
+					{
+						"type": "text",
+						"name": "da_individual_1_mobile_phone",
+						"title": "Mobile Phone:"
+					},						
+					{
+						"type": "multiple_choice",
+						"name": "da_individual_1_lives_multp",
+						"title": "Lives with Patient?",
+						"help_text": "",
+						"options": ['Yes', 'No']
+					},
+					{
+						"type": "paragraph",
+						"name": "da_individual_1_info",
+						"title": "Relevant Information"
+					},
+					{
+						"type": "section",
+						"name": "da_individual_2",
+						"title": "Significant Individual #2"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_2_name",
+						"title": "Name and Relationship:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_2_age",
+						"title": "Age:"
+					},
+					{					
+						"type": "text",
+						"name": "da_individual_2_home_phone",
+						"title": "Home Phone:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_2_work_phone",
+						"title": "Work Phone:"
+					},						
+					{
+						"type": "text",
+						"name": "da_individual_2_mobile_phone",
+						"title": "Mobile Phone:"
+					},						
+					{
+						"type": "multiple_choice",
+						"name": "da_individual_2_lives_multp",
+						"title": "Lives with Patient?",
+						"help_text": "",
+						"options": ['Yes', 'No']
+					},
+					{
+						"type": "paragraph",
+						"name": "da_individual_2_info",
+						"title": "Relevant Information"
+					},
+					{
+						"type": "section",
+						"name": "da_individual_3",
+						"title": "Significant Individual #3"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_3_name",
+						"title": "Name and Relationship:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_3_age",
+						"title": "Age:"
+					},
+					{					
+						"type": "text",
+						"name": "da_individual_3_home_phone",
+						"title": "Home Phone:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_3_work_phone",
+						"title": "Work Phone:"
+					},						
+					{
+						"type": "text",
+						"name": "da_individual_3_mobile_phone",
+						"title": "Mobile Phone:"
+					},						
+					{
+						"type": "multiple_choice",
+						"name": "da_individual_3_lives_multp",
+						"title": "Lives with Patient?",
+						"help_text": "",
+						"options": ['Yes', 'No']
+					},
+					{
+						"type": "paragraph",
+						"name": "da_individual_3_info",
+						"title": "Relevant Information"
+					},
+					{
+						"type": "section",
+						"name": "da_individual_4",
+						"title": "Significant Individual #4"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_4_name",
+						"title": "Name and Relationship:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_4_age",
+						"title": "Age:"
+					},
+					{					
+						"type": "text",
+						"name": "da_individual_4_home_phone",
+						"title": "Home Phone:"
+					},
+					{
+						"type": "text",
+						"name": "da_individual_4_work_phone",
+						"title": "Work Phone:"
+					},						
+					{
+						"type": "text",
+						"name": "da_individual_4_mobile_phone",
+						"title": "Mobile Phone:"
+					},						
+					{
+						"type": "multiple_choice",
+						"name": "da_individual_4_lives_multp",
+						"title": "Lives with Patient?",
+						"help_text": "",
+						"options": ['Yes', 'No']
+					},
+					{
+						"type": "paragraph",
+						"name": "da_individual_4_info",
+						"title": "Relevant Information"
 					}
-
-
-
-
-
 
           ]
        }]
