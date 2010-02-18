@@ -1,0 +1,17 @@
+{ "form": {
+  "name": "palliative_form",
+  "pages": [
+    {
+      "questions": [
+        {
+          "type": "section",
+          "name": "palliative_section",
+          "title": "Palliative Care Assessment"
+        }
+        
+        
+      ]
+    }
+  ]
+  
+}}
