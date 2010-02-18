@@ -1,0 +1,60 @@
+{ 
+  "form": {
+      "name": "plan_assessment",
+      "action": "/plan/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "plan_section",
+            "title": "Formulation / Plan:"
+          },
+					{
+						"type": "checkboxes",
+						"name": "plan_see_note_chbox",
+						"title": "",
+						"help_text": "",
+						"options": ['See Attending Physician Note for Formulation and Plan']
+					},
+					{
+						"type": "paragraph",
+						"name": "plan_paragraph",
+						"title": "Summary of Initial Problems and Medical Decision Making",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "plan_physician_signature",
+						"title": "Admitting Physician Signature",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "plan_pager_id",
+						"title": "Pager ID",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "plan_date",
+						"title": "Date",
+						"help_text": ""
+					},					
+					{
+						"type": "text",
+						"name": "plan_time",
+						"title": "Time",
+						"help_text": ""
+					}
+
+
+
+
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
+}
