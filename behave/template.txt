@@ -1,0 +1,22 @@
+{ 
+  "form": {
+      "name": "",
+      "action": "//create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "_section",
+            "title": ""
+          },
+
+
+
+
+
+
+				]
+		}]
+	}
+}

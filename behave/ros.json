@@ -1,0 +1,108 @@
+{ 
+  "form": {
+      "name": "ros",
+      "action": "/ros/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "ros_section",
+            "title": "Review of Systems"
+          },
+					{
+						"type": "checkboxes",
+						"name": "assess_cbox",
+						"title": "",
+						"help_text": "",
+						"options": ['Unable to assess;']
+					},
+					{
+						"type": "paragraph",
+						"name": "ros_reason",
+						"title": "Reason",
+						"help_text": ""
+					},
+					{
+						"type": "grid",
+						"name": "ros_systems",
+						"title": "System",
+						"help_text": "",
+						"columns": ['WNL', 'ABNL'],
+						"rows": ['General', 'Skin', 'Eyes', 'HENT / Neck', 'Breasts', 'Respiratory', 'Cardiovascular', '  Peripheral Vascular', 'Gastrointestinal', 
+										 'Musculoskeletal', 'Neurology', 'Hematology', 'Endocrine', 'Allergy / Immunologic']
+					},
+					{
+						"type": "paragraph",
+						"name": "ros_findings_paragraph",
+						"title": "Explanation of Abnormal Findings",
+						"help_text": ""
+					},
+					{
+						"type": "grid",
+						"name": "ros_genitourinary",
+						"title": "",
+						"help_text": "",
+						"columns": ['WNL', 'ABNL'],
+						"rows": ["Genitourinary"]
+					},
+					{
+						"type": "paragraph",
+						"name": "ros_genitourinary_paragraph",
+						"title": "Explanation of Abnormal Findings",
+						"help_text": "Note LMP, Due date if pregnant, Libido."
+					},
+					{
+						"type": "grid",
+						"name": "ros_nutrition",
+						"title": "",
+						"help_text": "",
+						"columns": ['WNL', 'ABNL'],
+						"rows": ["Nutrition"]
+					},
+					{
+						"type": "paragraph",
+						"name": "ros_nutrition_paragraph",
+						"title": "Explanation of Abnormal Findings",
+						"help_text": "Comment on malnutrition, new onset Diabetes Mellitus, enteral/parenteral nutrition within the last month, stage II-IV pressure
+													ulcers, or unintentional weight loss of 10 or more pounds within the last month."
+					},
+					{
+						"type": "grid",
+						"name": "ros_pain",
+						"title": "",
+						"help_text": "",
+						"columns": ['WNL', 'ABNL'],
+						"rows": ["Pain"]
+					},
+					{
+						"type": "paragraph",
+						"name": "ros_pain_paragraph",
+						"title": "Explanation of Abnormal Findings",
+						"help_text": "Intensity, Quality, Location, Aggravating / Ameliorating Factors."
+					},
+					{
+						"type": "section",
+						"name": "ros_tb_screening",
+						"title": "TB Screening"
+					},
+					
+					{
+						"type": "grid",
+						"name": "ros_tb_grid",
+						"title": "TB Screening",
+						"help_text": "",
+						"columns": ['Y', 'N'],
+						"rows": ['1. Have you had a cough for more than 3 weeks?', '2. Have you coughed up blood in the last 6 months?', '3. Have you had fevers and
+										 / or night sweats?', '4. Have you been exposed to anyone with tuberculosis?']
+					},
+					{
+						"type": "section",
+						"name": "ros_initiate_precautions",
+						"title": "Initiate Airborne Precautions if YES to two or more questions."
+					}
+
+				]
+		}]
+	}
+}
