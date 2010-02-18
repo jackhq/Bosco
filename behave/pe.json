@@ -1,0 +1,170 @@
+{ 
+  "form": {
+      "name": "physical_exam",
+      "action": "/pe/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "pe_section",
+            "title": "Physical Exam"
+          },
+					{"type": "text", "name": "pe_height", "title": "Height:",	"help_text": "" },
+					{"type": "text", "name": "pe_weight", "title": "Weight (kg):", "help_text": "" },
+					{"type": "text", "name": "pe_temp",	"title": "Temp:",	"help_text": "" },
+					{"type": "text", "name": "pe_resp",	"title": "Resp:",	"help_text": "" },
+					{"type": "section", "name": "pe_sitting", "title": "Sitting:" },
+					{"type": "text", "name": "pe_sit_hr",	"title": "HR:",	"help_text": "" },
+					{"type": "text", "name": "pe_sit_bp",	"title": "BP:",	"help_text": "" },
+					{"type": "section", "name": "pe_standing", "title": "Standing:" },
+					{"type": "text", "name": "pe_stand_hr",	"title": "HR:",	"help_text": "" },
+					{"type": "text", "name": "pe_stand_bp",	"title": "BP:",	"help_text": "" },
+					{
+						"type": "scale", 
+						"name": "pe_pain_scale", 
+						"title": "Pain Score - For Pediatric Patients, Use 0-5 Scale", 
+						"help_text": "Use Faces Scale as Needed", 
+						"start_value": 0,
+						"stop_value": 10,
+						"start_label": "none",
+						"stop_label": "worst"
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_appearance",
+							"title": "General Appearance",
+							"help_text": ""
+						},
+						{
+							"type": "checkboxes",
+							"name": "pe_unable_assess_cbox",
+							"title": "",
+							"help_text": "",
+							"options": ['Unable to assess (list reason below)']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_assess_reason",
+							"title": "Reason: (if unable to assess)",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_skin",
+							"title": "Skin",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Skin']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_skin_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_head",
+							"title": "Head",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Head']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_head_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_eyes",
+							"title": "Eyes",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Conjunctivae and lids', 'Pupils and irises', 'Optic discs and post segments']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_eyes_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_ear_nose_mouth",
+							"title": "Ear, Nose & Mouth",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Auditory canals and tympanic membranes', 'Hearing', 'Lips, teeth, gums', 'Oropharynx']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_ear_nose_mouth_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_neck",
+							"title": "Neck",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Trachea', 'Thyroid', 'Cervical nodes']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_neck_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_chest_lungs",
+							"title": "Chest / Lungs",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Respiratory effort', 'Palpation / Percussion', 'Ausculation of lungs']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_chest_lungs_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_breast",
+							"title": "Breast",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Breast']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_breast_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						},
+						{
+							"type": "grid",
+							"name": "pe_cardiovascular",
+							"title": "Cardiovascular",
+							"help_text": "",
+							"columns": ['WNL', 'Deferred'],
+							"rows": ['Carotid pulses', 'Auscultation of heart', 'Abdominal aorta', 'Peripheral pulses']
+						},
+						{
+							"type": "paragraph",
+							"name": "pe_cardiovascular_commemnts",
+							"title": "Explanation of abnormal findings / Clinical comments",
+							"help_text": ""
+						}
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
+}
