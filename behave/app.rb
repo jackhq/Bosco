@@ -61,6 +61,10 @@ class App < Sinatra::Default
     haml bosco('pe').build_form
   end
   
+  get '/da' do
+    haml bosco('da').build_form
+  end
+  
   
   def bosco(name)
     template = Crack::JSON.parse(open(name + '.json').read)    

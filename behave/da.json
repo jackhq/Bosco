@@ -1,0 +1,49 @@
+{ 
+  "form": {
+      "name": "developmental_childhood_assessment",
+      "action": "/da/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "da_section",
+            "title": "Developmental / Childhood Information Assessment"
+          },
+					{
+				   "type": "checkboxes",
+            "name": "da_immunizations",
+            "title": "Immunizations",
+            "help_text": "",
+            "options": ['Up-to-date per parental report', 'Other']
+          },
+					{
+						"type": "text",
+						"name": "da_immunizations_other",
+						"title": "Other Immunizations"
+					},
+					{
+						"type": "grid",
+						"name": "da_milestones",
+						"title": "Developmental Milestones",
+						"columns": ['WNL', 'ABNL'],
+						"rows": ["Mother's Pregnancy", "Patient's Birth", 'Age Pt Crawled', 'Age Pt Walked', 'Age Pt Talked', 'Age Pt Toilet Trained' ]
+					},
+					{
+						"type": "paragraph",
+						"name": "da_milestones_explanation",
+						"title": "Explanation of Abnormal Information"
+					}
+
+
+
+
+
+
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
+}
