@@ -49,8 +49,12 @@ class App < Sinatra::Default
     haml bosco('mra').build_form
   end
   
-  get '/ros' do
-    haml bosco('ros').build_form
+  get '/ros1' do
+    haml bosco('ros1').build_form
+  end
+
+  get '/ros2' do
+    haml bosco('ros2').build_form
   end
   
   

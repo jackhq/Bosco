@@ -1,0 +1,86 @@
+{ 
+  "form": {
+      "name": "ros2",
+      "action": "/ros2/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "ros2_section",
+            "title": "Review of Systems 2"
+          },
+					{
+						"type": "grid",
+						"name": "ros2_gastro",
+						"title": "Gastrointenstinal",
+						"help_text": "",
+						"columns": ['WNL', 'Deferred'],
+						"rows": ['Abdomen', 'Liver & spleen', 'Anus, peineum & rectum', 'Stool sample for occult blood, when indicated']
+					},
+					{
+						"type": "paragraph",
+						"name": "ros2_gastro_comments",
+						"title": "Explanation of abnormal findings / Clinical comments",
+						"help_text": ""
+					},
+					{
+						"type": "grid",
+						"name": "ros2_genitourinary",
+						"title": "Genitourinary",
+						"help_text": "",
+						"columns": ['WNL', 'Deferred'],
+						"rows": ['MALE: Digital rectal of prostate', 'Penis / Scrotal contents', 'FEMALE: Bladder / Fundus', 'External genitalia']
+					},
+					{
+						"type": "paragraph",
+						"name": "ros2_gastro_comments",
+						"title": "Explanation of abnormal findings / Clinical comments",
+						"help_text": ""
+					},
+					{
+						"type": "grid",
+						"name": "ros2_musculoskeletal",
+						"title": "Musculoskeletal",
+						"help_text": "",
+						"columns": ['WNL', 'Deferred'],
+						"rows": ['Digits & nails', 'Gait & station', 'Head & neck', 'Extremities', 'Spine, ribs & pelvis']
+					},
+					{
+						"type": "paragraph",
+						"name": "ros2_musculo_comments",
+						"title": "Explanation of abnormal findings / Clinical comments",
+						"help_text": "Exam of joints, e.g., notation of misalignment; range of motion; stability w/ notation of any dislocation; 
+													muscle strength / tone"
+					},
+					{
+						"type": "grid",
+						"name": "ros2_neurologic",
+						"title": "Neurologic",
+						"help_text": "",
+						"columns": ['WNL', 'Deferred'],
+						"rows": ['Cranial nerves', 'Deep tendon reflexes', 'Superficial reflexes', 'Sensation', 'Cerebellar findings']
+					},
+					{
+						"type": "paragraph",
+						"name": "ros2_neuro_comments",
+						"title": "Explanation of abnormal findings / Clinical comments",
+						"help_text": ""
+					},
+					{
+						"type": "section",
+						"name": "ros2_labs_section",
+						"title": "Labs / Studies"
+					},
+					{
+						"type": "paragraph",
+						"name": "ros2_lab_studies_comments",
+						"title": "Labs / Studies Comments:",
+						"help_text": ""
+					}
+
+
+				]
+		}]
+	}
+}
