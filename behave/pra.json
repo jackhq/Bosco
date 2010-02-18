@@ -12,7 +12,7 @@
           },
 					{
 						"type": "grid",
-						"name": "elopement_section",
+						"name": "pra_elopement_section",
 						"title": "ELOPEMENT",
 						"help_text": "",
 						"columns": ['Y', 'N', 'UNK'],
@@ -20,13 +20,13 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "elopement_paragraph",
+						"name": "pra_elopement_paragraph",
 						"title": "Elopement Explanation / Clinical Comments",
 						"help_text": "Explanation of elopement assessments."
 					},
 					{
 						"type": "grid",
-						"name": "suicide_section",
+						"name": "pra_suicide_section",
 						"title": "SUICIDE",
 						"help_text": "",
 						"columns": ['Y', 'N', 'UNK'],
@@ -35,13 +35,13 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "suicide_paragraph",
+						"name": "pra_suicide_paragraph",
 						"title": "Suicide Explanation / Clinical Comments",
 						"help_text": "Explanation of suicide assessments."
 					},
 					{
 						"type": "grid",
-						"name": "violence_section",
+						"name": "pra_violence_section",
 						"title": "VIOLENCE",
 						"help_text": "",
 						"columns": ['Y', 'N', 'UNK'],
@@ -49,13 +49,13 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "suicide_paragraph",
+						"name": "pra_suicide_paragraph",
 						"title": "Violence Explanation / Clinical Comments",
 						"help_text": "Explanation of violence assessments."
 					},
 					{
 						"type": "grid",
-						"name": "trauma_section",
+						"name": "pra_trauma_section",
 						"title": "TRAUMA",
 						"help_text": "",
 						"columns": ['Y', 'N', 'UNK'],
@@ -63,12 +63,15 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "trauma_paragraph",
+						"name": "pra_trauma_paragraph",
 						"title": "Trauma Explanation / Clinical Comments",
 						"help_text": "Specify nature, duration, role and age when trauma occured.  If YES to any question, assess for Post-Traumatic Stress Disorder."
 					}
 
-				]
-		}]
-	}
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
 }

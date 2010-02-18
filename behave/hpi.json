@@ -12,21 +12,21 @@
           },
           {
               "type": "paragraph",
-              "name": "catalyst",
+              "name": "hpi_catalyst",
               "title": "Reason for Today's Visit",
               "help_text": "How was the visit initiated?",
               "required": true
           },
           {
               "type": "paragraph",
-              "name": "chief_complaints",
+              "name": "hpi_chief_complaints",
               "title": "Chief Complaints",
               "help_text": "What is the reason for the visit",
               "required": true
           },
           {
               "type": "multiple_choice",
-              "name": "medication_compliance",
+              "name": "hpi_medication_compliance",
               "title": "Medication Compliance",
               "help_text": "Is the patient compliant with their medications?",
               "options": ["Yes", "No"],
@@ -34,7 +34,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "symptoms",
+              "name": "hpi_symptoms",
               "title": "Symptoms",
               "help_text": "What symptoms does the patient have?",
               "options": ['Auditory Hallucinations', 'Visual Hallucinations', 'HI','SI - Thoughts','SI - Plan', 'SI - Intent', 'SI - Means' , 'Delusions'],

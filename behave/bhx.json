@@ -7,41 +7,41 @@
           "questions": [
           {
             "type": "section",
-            "name": "background_hx",
+            "name": "bhx_section",
             "title": "Background History"
           },
           
           {
               "type": "checkboxes",
-              "name": "unable_to_assess",
+              "name": "bhx_unable_to_assess",
               "title": "Social History",
               "help_text": "",
               "options": ["Unable to Assess"],
               "required": true
           },
 				
-					{"name":"sh_reason","title":"Reason","help_text":"","type":"text"},
-					{"name":"developmental_education","title":"Developmental/Education","help_text":"","type":"paragraph"},
-					{"name":"key_relationships_living_situation","title":"Key Relationships/Living Situation","help_text":"","type":"paragraph"},
-					{"name":"sexual_history","title":"Sexual History","help_text":"","type":"paragraph"},
-					{"name":"employment_hazardous_exposures","title":"Employment/Hazardous Exposures","help_text":"","type":"paragraph"},
-					{"name":"legal","title":"Legal","help_text":"","type":"paragraph"},
-					{"name":"military","title":"Military","help_text":"","type":"paragraph"},
-          {"type": "section", "name": "substance_abuse_history", "title": "Substance Abuse History" },
-          {"type": "multiple_choice", "name": "smoker_yn", "title": "Smoker", "options": ['Yes','No','Stopped'] },
-					{"type": "text", "name": "quit_date", "title": "Quit Date", "help_text": "" },
-					{"type": "text", "name": "pack_years", "title": "# Pack Years", "help_text": ""},
-					{"type": "multiple_choice", "name": "delirium_tremens_yn", "title": "Is there a history of Delirium Tremens during alcohol withdrawal?", "options": ['Yes', 'No'] },
-					{"type": "multiple_choice", "name": "seizure_yn", "title": "Is there a history of seizure during alcohol withdrawal?", "options": ['Yes', 'No'] },
-					{"type": "paragraph", "name": "substance_paragraph", "title": "Substance_____Recent and Historical Use, Date of Last Use, Age First Used_____Withdrawal Symptoms", "help_text": ""},
+					{"name":"bhx_sh_reason","title":"Reason","help_text":"","type":"text"},
+					{"name":"bhx_developmental_education","title":"Developmental/Education","help_text":"","type":"paragraph"},
+					{"name":"bhx_key_relationships_living_situation","title":"Key Relationships/Living Situation","help_text":"","type":"paragraph"},
+					{"name":"bhx_sexual_history","title":"Sexual History","help_text":"","type":"paragraph"},
+					{"name":"bhx_employment_hazardous_exposures","title":"Employment/Hazardous Exposures","help_text":"","type":"paragraph"},
+					{"name":"bhx_legal","title":"Legal","help_text":"","type":"paragraph"},
+					{"name":"bhx_military","title":"Military","help_text":"","type":"paragraph"},
+          {"type": "section", "name": "bhx_substance_abuse_history", "title": "Substance Abuse History" },
+          {"type": "multiple_choice", "name": "bhx_smoker_yn", "title": "Smoker", "options": ['Yes','No','Stopped'] },
+					{"type": "text", "name": "bhx_smoker_quit_date", "title": "Quit Date", "help_text": "" },
+					{"type": "text", "name": "bhx_smoker_pack_years", "title": "# Pack Years", "help_text": ""},
+					{"type": "multiple_choice", "name": "bhx_delirium_tremens_yn", "title": "Is there a history of Delirium Tremens during alcohol withdrawal?", "options": ['Yes', 'No'] },
+					{"type": "multiple_choice", "name": "bhx_seizure_yn", "title": "Is there a history of seizure during alcohol withdrawal?", "options": ['Yes', 'No'] },
+					{"type": "paragraph", "name": "bhx_substance_paragraph", "title": "Substance_____Recent and Historical Use, Date of Last Use, Age First Used_____Withdrawal Symptoms", "help_text": ""},
 					{
               "type": "section",
-              "name": "family_hx",
+              "name": "bhx_family_hx",
               "title": "Family History"
 					},
 					{
               "type": "checkboxes",
-              "name": "family_hx_unable_to_assess",
+              "name": "bhx_family_hx_unable_to_assess",
 							"title": "Unable to Assess",
               "help_text": "",
               "options": ["Unable to Assess"],
@@ -49,20 +49,20 @@
           },
 					{
 						"type": "text",
-						"name": "fh_reason",
+						"name": "bhx_fh_reason",
 						"title": "Reason:",
 						"help_text": ""
 					},
-					{"type": "paragraph", "name": "fh_psychiatric_paragraph", "title": "Psychiatric:", "help_text": ""},
-					{"type": "paragraph", "name": "fh_medical_paragraph", "title": "Medical:", "help_text": ""},
+					{"type": "paragraph", "name": "bhx_fh_psychiatric_paragraph", "title": "Psychiatric:", "help_text": ""},
+					{"type": "paragraph", "name": "bhx_fh_medical_paragraph", "title": "Medical:", "help_text": ""},
 					{
               "type": "section",
-              "name": "personal_hx",
+              "name": "bhx_personal_hx",
               "title": "Personal History"
           },
           {
               "type": "scale",
-              "name": "mothers_pregnancy_condition",
+              "name": "bhx_mothers_pregnancy_condition",
               "title": "Mothers Condition during Pregnancy",
               "help_text": "",
               "start_value": 1,
@@ -73,14 +73,14 @@
           },
           {
             "type": "paragraph",
-            "name": "development_milestones",
+            "name": "bhx_development_milestones",
             "title": "Milestones and development of early childhood, walking and talking",
             "help_text": "",
             "required": true
           },
           {
               "type": "checkboxes",
-              "name": "personal_hx_indicators",
+              "name": "bhx_personal_hx_indicators",
               "title": "Personal History Indicators",
               "help_text": "",
               "options": ["Night Terrors", "Bed Wetting", "Sleep Talking", "Physical Handicaps", "Experimentation with drugs", "Schooling", "Work History", "Recreational Interest", "Dating and Marital History", "Children"],

@@ -7,25 +7,25 @@
           "questions": [
           {
             "type": "section",
-            "name": "ros_section",
+            "name": "ros1_section",
             "title": "Review of Systems 1"
           },
 					{
 						"type": "checkboxes",
-						"name": "assess_cbox",
+						"name": "ros1_assess_cbox",
 						"title": "",
 						"help_text": "",
 						"options": ['Unable to assess;']
 					},
 					{
 						"type": "paragraph",
-						"name": "ros_reason",
+						"name": "ros1_reason",
 						"title": "Reason",
 						"help_text": ""
 					},
 					{
 						"type": "grid",
-						"name": "ros_systems",
+						"name": "ros1_systems",
 						"title": "System",
 						"help_text": "",
 						"columns": ['WNL', 'ABNL'],
@@ -34,13 +34,13 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "ros_findings_paragraph",
+						"name": "ros1_findings_paragraph",
 						"title": "Explanation of Abnormal Findings",
 						"help_text": ""
 					},
 					{
 						"type": "grid",
-						"name": "ros_genitourinary",
+						"name": "ros1_genitourinary",
 						"title": "",
 						"help_text": "",
 						"columns": ['WNL', 'ABNL'],
@@ -48,13 +48,13 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "ros_genitourinary_paragraph",
+						"name": "ros1_genitourinary_paragraph",
 						"title": "Explanation of Abnormal Findings",
 						"help_text": "Note LMP, Due date if pregnant, Libido."
 					},
 					{
 						"type": "grid",
-						"name": "ros_nutrition",
+						"name": "ros1_nutrition",
 						"title": "",
 						"help_text": "",
 						"columns": ['WNL', 'ABNL'],
@@ -62,14 +62,14 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "ros_nutrition_paragraph",
+						"name": "ros1_nutrition_paragraph",
 						"title": "Explanation of Abnormal Findings",
 						"help_text": "Comment on malnutrition, new onset Diabetes Mellitus, enteral/parenteral nutrition within the last month, stage II-IV pressure
 													ulcers, or unintentional weight loss of 10 or more pounds within the last month."
 					},
 					{
 						"type": "grid",
-						"name": "ros_pain",
+						"name": "ros1_pain",
 						"title": "",
 						"help_text": "",
 						"columns": ['WNL', 'ABNL'],
@@ -77,19 +77,19 @@
 					},
 					{
 						"type": "paragraph",
-						"name": "ros_pain_paragraph",
+						"name": "ros1_pain_paragraph",
 						"title": "Explanation of Abnormal Findings",
 						"help_text": "Intensity, Quality, Location, Aggravating / Ameliorating Factors."
 					},
 					{
 						"type": "section",
-						"name": "ros_tb_screening",
+						"name": "ros1_tb_screening",
 						"title": "TB Screening"
 					},
 					
 					{
 						"type": "grid",
-						"name": "ros_tb_grid",
+						"name": "ros1_tb_grid",
 						"title": "TB Screening",
 						"help_text": "",
 						"columns": ['Y', 'N'],
@@ -98,11 +98,14 @@
 					},
 					{
 						"type": "section",
-						"name": "ros_initiate_precautions",
+						"name": "ros1_initiate_precautions",
 						"title": "Initiate Airborne Precautions if YES to two or more questions."
 					}
 
-				]
-		}]
-	}
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
 }

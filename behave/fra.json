@@ -12,7 +12,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "age",
+              "name": "fra_age",
               "title": "Age",
               "help_text": "",
               "options": ['Less than 60', '60 - 70','71 or Older'],
@@ -20,7 +20,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "mental_status",
+              "name": "fra_mental_status",
               "title": "Mental Status",
               "help_text": "",
               "options": ['Willing and able to ask for assistance when needed', 'Unwilling and/or unable to ask for assistance when needed(e.g., sedated or lethargic)'],
@@ -28,7 +28,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "physical_status",
+              "name": "fra_physical_status",
               "title": "Physical Status",
               "help_text": "",
               "options": ['No Problems','Limb (e.g. amputation), or compliants of dizziness or syncope, or neurological (e.g., paralysis or paresthesia)'],
@@ -36,7 +36,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "impairments",
+              "name": "fra_impairments",
               "title": "Impairments",
               "help_text": "",
               "options": ['None','Visual, or hearing, or language, or speech','Othostatic hypotension'],
@@ -44,7 +44,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "elimination",
+              "name": "fra_elimination",
               "title": "Elimination",
               "help_text": "",
               "options": ['Continet and independent','Catheter or ostomy', 'Elimination with assistance, or diarrhea, or incontinence'],
@@ -52,7 +52,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "gait_or_balance",
+              "name": "fra_gait_or_balance",
               "title": "Gait or balance",
               "help_text": "",
               "options": ['Walks independently','Walks with assistive device. (e.g. cane, walker)', 'Balance problems -- walking, or standing, or unsteady gait, or wheelchair dependent'],
@@ -60,7 +60,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "history_of_falls",
+              "name": "fra_history_of_falls",
               "title": "History of Falls",
               "help_text": "",
               "options": ['No Known History','Near falls or fear of falling','Has fallen'],
@@ -68,7 +68,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "medication_used_last_24",
+              "name": "fra_medication_used_last_24",
               "title": "Medications/Substances used in the last 24 hours",
               "help_text": "",
               "options": ['None of the medications or substances below','One or Two medications or substances below','Three or more medications or substances below'],
@@ -76,11 +76,12 @@
           },
           {
             "type": "section",
+						"name": "fra_medications_section"
             "title": "Medications/Substances"
           },
           {
               "type": "checkboxes",
-              "name": "pshchotropics",
+              "name": "fra_pshchotropics",
               "title": "Psychotropics",
               "help_text": "",
               "options": ['antidepressants','antipsychotics','mood stabilizers','anxiolytics (e.g. benzodiazepines)','sedatives','stimulants','anticlolinergics (e.g. benztropine)','antihistamines (e.g. Benadryl)'],
@@ -88,7 +89,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "intoxication_from",
+              "name": "fra_intoxication_from",
               "title": "Intoxication From",
               "help_text": "",
               "options": ['ethanol','cocaine','heroin','opiates','marijuana','amphetamines','ectasy','benzodiazines','barbiturates','inhalants'],
@@ -96,7 +97,7 @@
           },
           {
               "type": "checkboxes",
-              "name": "other_substances",
+              "name": "fra_other_substances",
               "title": "Other Substances",
               "help_text": "",
               "options": ['anesthesia','antihypertensives','diuretics','narcotic analgesics'],
