@@ -1,0 +1,137 @@
+{ 
+  "form": {
+      "name": "functional_assessment",
+      "action": "/fa/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "fa_instructions_section",
+            "title": "Diabetes, Functional, Inpatient Fall Risk, & Learning and Education Needs Assessments are to be completed by the Admit Team during it's normal working hours.  At other times, these assessments are to be completed by the Unit Nurse."
+          },
+					{
+						"type": "grid",
+						"name": "fa_activities_grid",
+						"title": "Activities of Daily Living",
+						"help_text": "",
+						"columns": ['Independent', 'With Assistance'],
+						"rows": ['Bathing', 'Dressing', 'Feeding', 'Ambulating', 'Communicating']
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_other_needs",
+						"title": "Other special needs:",
+						"help_text": ""
+					},
+					{
+						"type": "checkboxes",
+						"name": "fa_equipment",
+						"title": "Special Equipment Used",
+						"help_text": "",
+						"options": ['Glasses', 'Contact Lenses', 'Dentures - Full', 'Dentures - Partial', 'Prosthesis', 'Walker', 'Cane', 'Crutches', 'Wheelchair', 'Hearing Aid', 'TDD', 'Picture Board', 'Other']
+					},
+					{
+						"type": "text",
+						"name": "fa_equipment_prosthesis",
+						"title": "Prosthesis (type):",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "fa_equipment_other",
+						"title": "Other (describe):",
+						"help_text": ""
+					},
+					{
+						"type": "section",
+						"name": "fa_leisure",
+						"title": "Leisure Functioning",
+						"help_text": ""
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_interests_present",
+						"title": "Leisure Interests: Present",
+						"help_text": ""
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_interests_past",
+						"title": "Leisure Interests: Past",
+						"help_text": ""
+					},					
+					{
+						"type": "paragraph",
+						"name": "fa_skills_present",
+						"title": "Skills, talents, aptitudes: Present",
+						"help_text": ""
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_skills_past",
+						"title": "Skills, talents, aptitudes: Past",
+						"help_text": ""
+					},					
+					{
+						"type": "section",
+						"name": "fa_safety",
+						"title": "Behavioral Safety",
+						"help_text": ""
+					},					
+					{
+						"type": "checkboxes",
+						"name": "fa_informed",
+						"title": "'It is our goal to make our establishment as safe as possible for everyone and to avoid the use of seclusion or restraint 
+											 in order to maintain safety.  Knowing how we can be most helpful to you during difficult times is an important way for us to
+											 achieve this goal.'",
+						"help_text": "",
+						"options": ['Patient Informed', 'Family Informed']
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_not_informed",
+						"title": "If Not Informed, Please Explain:",
+						"help_text": ""
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_make_angry",
+						"title": "What might make you feel frustrated, irritated, angry, or out of control?",
+						"help_text": ""
+					},
+					{
+						"type": "checkboxes",
+						"name": "fa_signs_angry",
+						"title": "How will we know if you are irritated or angry?",
+						"help_text": "",
+						"options": ['Pacing', 'Clenching fists', 'Yelling', 'Isolating self', 'Other']
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_signs_other",
+						"title": "If Other: (describe)",
+						"help_text": ""
+					},
+					{
+						"type": "checkboxes",
+						"name": "fa_helps_calm",
+						"title": "What helps you to calm down and not hurt yourself or others?",
+						"help_text": "",
+						"options": ['Time alone', 'Listening to music', 'Exercising', 'Talking with someone', 'Reading', 'Talking to yourself in a positive way (e.g., "stay cool," "I can handle it; take it easy")',
+						 						'Other', 'Patient needs help in identifying methods or tools to manage aggressive behavior. (Integrate into Treatment Plan)']
+					},
+					{
+						"type": "paragraph",
+						"name": "fa_helps_calm_other",
+						"title": "If Other: (describe)",
+						"help_text": ""
+					}
+
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
+}
