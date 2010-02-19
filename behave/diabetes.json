@@ -1,0 +1,119 @@
+{ 
+  "form": {
+      "name": "diabetes_assessment",
+      "action": "/diabetes/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "diabetes_section",
+            "title": "Admission History for Diabetes"
+          },
+          {
+            "type": "section",
+            "name": "diabetes_directions",
+            "title": "Complete only for patients with diabetes mellitus."
+          },
+          {
+            "type": "checkboxes",
+            "name": "diabetes_type",
+            "title": "Type of Diabetes",
+            "help_text": "",
+            "options": ['Type 1', 'Type 2', 'Gestational / Pregnancy', 'New diabetes diagnosis', 'Steroid-induced', 'Pancreatic disease', 'CF related', 'Unknown type']
+          },
+          {
+            "type": "checkboxes",
+            "name": "diabetes_treatment",
+            "title": "Type of Treatment",
+            "help_text": "",
+            "options": ['Insulin use less than five years', 'Insulin use greater than five years', 'Oral agents', 'Diet and exercise', 'Insulin pump', 'None']
+          },
+          {
+            "type": "checkboxes",
+            "name": "diabetes_glucose",
+            "title": "Blood Glucose Monitoring Glucometer",
+            "help_text": "",
+            "options": ['One Touch', 'Accu-Check', 'Ascensia Contour', 'Freestyle', 'True Track', 'Other', 'Unknown', 'None']
+          },					
+          {
+            "type": "checkboxes",
+            "name": "diabetes_frequency",
+            "title": "Testing Frequency",
+            "help_text": "",
+            "options": ['Once a day', 'Twice a day', 'Three times a day', 'Four times a day', 'Weekly', 'Pre-prandial', 'Post-prandial', 'Bedtime', '3:00 a.m.', 'Never']
+          },
+          {
+            "type": "checkboxes",
+            "name": "diabetes_meals",
+            "title": "Meal Plan History",
+            "help_text": "",
+            "options": ['Eats 1 meal a day', 'Eats 2 meals a day', 'Eats 3 meals a day', 'Bedtime snack', 'Consistent carbohydrate servings', 'Exchange plan', 'Does not follow plan']
+          },
+					{
+						"type": "section",
+						"name": "diabetes_hypoglycemia_section",
+						"title": "Hypoglycemia History",
+						"help_text": ""
+					},
+					{
+            "type": "checkboxes",
+            "name": "diabetes_symptoms",
+            "title": "Symptoms",
+            "help_text": "",
+            "options": ['Shaky', 'Sweaty', 'Nausea', 'Irritable', 'Confused', 'No symptoms']
+					},
+					{
+            "type": "checkboxes",
+            "name": "diabetes_hypo_frequency",
+            "title": "Frequency",
+            "help_text": "",
+            "options": ['< Once a week', '2 to three times a week', '> 3 times a week', 'Rarely', 'Never', 'Morning', 'Afternoon', 'Evening', 'Night']
+					},
+					{
+            "type": "checkboxes",
+            "name": "diabetes_hypo_treatment",
+            "title": "Treatment",
+            "help_text": "",
+            "options": ['3 glucose tabs', '1/2 cup juice', '1 cup of milk', '1/2 cup regular soda', 'hard candies', 'Glucagon', 'Other']
+					},
+					{
+						"type": "section",
+						"name": "diabetes_hyperglycemia_section",
+						"title": "Hyperglycemia History",
+						"help_text": ""
+					},
+					{
+            "type": "checkboxes",
+            "name": "diabetes_hyper_symptoms",
+            "title": "Symptoms",
+            "help_text": "",
+            "options": ['Excessive fatigue', 'Hunger', 'Nausea', 'Excessive thirst', 'Excessive urination', 'Vomiting', 'Visual problems', 'Abdominal pain', 'Recurrent infections', 'Deep breathing', 'Behavior change', 'Weight loss']
+					},
+					{
+						"type": "section",
+						"name": "diabetes_education",
+						"title": "Diabetes Education History",
+						"help_text": ""
+					},
+					{
+            "type": "checkboxes",
+            "name": "diabetes_education_history",
+            "title": "Prior Education",
+            "help_text": "",
+            "options": ['Yes', 'No']
+					}
+					
+					
+
+
+
+
+
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
+}
