@@ -1,0 +1,275 @@
+{ 
+  "form": {
+      "name": "learning_education_needs_assessment",
+      "action": "/len/create",
+      "method": "post", 
+      "pages": [{
+          "questions": [
+          {
+            "type": "section",
+            "name": "len_section",
+            "title": "Learning and Education Needs Assessment"
+          },
+					{
+						"type": "checkboxes",
+						"name": "len_reading_ability",
+						"title": "1. Reading ability:",
+						"help_text": "",
+						"options": ['satisfactory', 'has difficulty']
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_reading_determined",
+						"title": "How determined:",
+						"help_text": "",
+						"options": ['school placement', 'last grade completed', 'interview']
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_learns_best",
+						"title": "2. Learns best by:",
+						"help_text": "",
+						"options": ['visual (pictures, etc.)', 'hearing (tape, explanation)', 'doing', 'reading']
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_assisted",
+						"title": "3. Assisted communication device / visual cues required?",
+						"help_text": "",
+						"options": ['Yes', 'No']
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_limitations",
+						"title": "4. Limitations to Learning:",
+						"help_text": "",
+						"options": ['Anxiety', 'No limitations / barriers', 'Physical', 'Cognitive / sensory', 'Psychosis', 'Unreceptive', 'Other (specify)']
+					},
+					{
+						"type": "paragraph",
+						"name": "len_limitations_other",
+						"title": "Others (specify)",
+						"help_text": ""
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_learning_needs",
+						"title": "5. Learning Needs:",
+						"help_text": "",
+						"options": ['Understanding of psychiatric illness', 'Accessing resources', 'Nutritional needs', 'Parenting skills', 
+												'Understanding of physical illness', 'Health promotion / Safety / Fall Prevention', 'Medications', 'Relapse prevention', 
+												'Tests / Treatment / Program', 'Precipitating stressors', 'Financial', 'Med: Food / Drug interaction']
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_educational_issues",
+						"title": "Are there educational issues contributing to patient's illness or interfering with treatment?",
+						"help_text": "",
+						"options": ['No', 'Yes']
+					},
+					{
+						"type": "paragraph",
+						"name": "len_educational_issues_explain",
+						"title": "If yes, identify:",
+						"help_text": ""
+					},
+					{
+						"type": "paragraph",
+						"name": "len_document_learning_needs",
+						"title": "Document any further assessment or referral for assessment if indicated."
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_education_related",
+						"title": "6. Education related to admission process, procedures, and possible treatment initiated with:",
+						"help_text": "",
+						"options": ['Patient', 'Family', 'Caregiver', 'Other']
+					},
+					{
+						"type": "paragraph",
+						"name": "len_education_related_other",
+						"title": "Other: (explain)",
+						"help_text": ""
+					},					
+					{
+						"type": "checkboxes",
+						"name": "len_education_related_outcome",
+						"title": "Outcome:",
+						"help_text": "",
+						"options": ['Able to understand -- no review necessary', 'Needs reinforcement', 'Poor understanding', 'Unable to teach']
+					},
+					{
+						"type": "section",
+						"name": "len_preliminary_formulations_section",
+						"title": "Preliminary Nursing Formulations",
+						"help_text": ""
+					},
+					{
+						"type": "checkboxes",
+						"name": "len_preliminary_formulation_chbox",
+						"title": "Check all that apply:",
+						"help_text": "",
+						"options": ['Potential for self-harm', 'Current medical problems', 'Altered thought process / content', 'Auditory / visual hallucinations',	
+												'Potential for substance withdrawal', 'Potential for violence toward others', 'Impaired cognitive ability', 
+												'Potential for seclusion or restraint']
+					},
+					{
+						"type": "paragraph",
+						"name": "len_preliminary_formulation_injury",
+						"title": "Potential for injury, related to (explain)",
+						"help_text": ""						
+					},
+					{
+						"type": "paragraph",
+						"name": "len_education_related_other",
+						"title": "Other: (explain)",
+						"help_text": ""
+					},
+					{
+						"type": "section",
+						"name": "len_signature_1",
+						"title": "Signature #1"
+					},
+					{
+						"type": "text",
+						"name": "len_signature_1_initials",
+						"title": "Initials",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_1_signature",
+						"title": "Signature",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_1_pager",
+						"title": "Pager ID",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_1_date",
+						"title": "Date",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_1_time",
+						"title": "Time",
+						"help_text": ""
+					},
+					{
+						"type": "section",
+						"name": "len_signature_2",
+						"title": "Signature #2"
+					},
+					{
+						"type": "text",
+						"name": "len_signature_2_initials",
+						"title": "Initials",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_2_signature",
+						"title": "Signature",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_2_pager",
+						"title": "Pager ID",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_2_date",
+						"title": "Date",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_2_time",
+						"title": "Time",
+						"help_text": ""
+					},
+					{
+						"type": "section",
+						"name": "len_signature_3",
+						"title": "Signature #3"
+					},
+					{
+						"type": "text",
+						"name": "len_signature_3_initials",
+						"title": "Initials",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_3_signature",
+						"title": "Signature",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_3_pager",
+						"title": "Pager ID",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_3_date",
+						"title": "Date",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_3_time",
+						"title": "Time",
+						"help_text": ""
+					},
+					{
+						"type": "section",
+						"name": "len_signature_4",
+						"title": "Signature #4"
+					},
+					{
+						"type": "text",
+						"name": "len_signature_4_initials",
+						"title": "Initials",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_4_signature",
+						"title": "Signature",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_4_pager",
+						"title": "Pager ID",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_4_date",
+						"title": "Date",
+						"help_text": ""
+					},
+					{
+						"type": "text",
+						"name": "len_signature_4_time",
+						"title": "Time",
+						"help_text": ""
+					}
+					
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
+}

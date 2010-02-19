@@ -23,7 +23,8 @@
               "name": "fra_mental_status",
               "title": "Mental Status",
               "help_text": "",
-              "options": ['Willing and able to ask for assistance when needed', 'Unwilling and/or unable to ask for assistance when needed(e.g., sedated or lethargic)'],
+              "options": ['Willing and able to ask for assistance when needed', 'Unwilling and/or unable to ask for assistance when needed(e.g., sedated or 
+													lethargic)'],
               "required": true
           },
           {
@@ -55,7 +56,8 @@
               "name": "fra_gait_or_balance",
               "title": "Gait or balance",
               "help_text": "",
-              "options": ['Walks independently','Walks with assistive device. (e.g. cane, walker)', 'Balance problems -- walking, or standing, or unsteady gait, or wheelchair dependent'],
+              "options": ['Walks independently','Walks with assistive device. (e.g. cane, walker)', 'Balance problems -- walking, or standing, or 
+													unsteady gait, or wheelchair dependent'],
               "required": true
           },
           {
@@ -71,12 +73,13 @@
               "name": "fra_medication_used_last_24",
               "title": "Medications/Substances used in the last 24 hours",
               "help_text": "",
-              "options": ['None of the medications or substances below','One or Two medications or substances below','Three or more medications or substances below'],
+              "options": ['None of the medications or substances below','One or Two medications or substances below',
+													'Three or more medications or substances below'],
               "required": true
           },
           {
             "type": "section",
-						"name": "fra_medications_section"
+						"name": "fra_medications_section",
             "title": "Medications/Substances"
           },
           {
@@ -84,7 +87,8 @@
               "name": "fra_pshchotropics",
               "title": "Psychotropics",
               "help_text": "",
-              "options": ['antidepressants','antipsychotics','mood stabilizers','anxiolytics (e.g. benzodiazepines)','sedatives','stimulants','anticlolinergics (e.g. benztropine)','antihistamines (e.g. Benadryl)'],
+              "options": ['antidepressants','antipsychotics','mood stabilizers','anxiolytics (e.g. benzodiazepines)','sedatives','stimulants',
+													'anticlolinergics (e.g. benztropine)','antihistamines (e.g. Benadryl)'],
               "required": true
           },
           {
@@ -106,7 +110,9 @@
           ]
        }]
    },
-   "output": "Patient is a 39 year old Caucasion Male with a history of [patient problems].  Patient presented [Practice Name] following #{catalyst} with complaints of #{chief_complaints}. Patient reports #{medication_compliance ? 'compliance' : 'non-compliance'} with medications.  Patient experiencing #{symptoms.map { |k,v| k}.to_sentence}",
+   "output": "Patient is a 39 year old Caucasion Male with a history of [patient problems].  Patient presented [Practice Name] following #{catalyst} 
+							with complaints of #{chief_complaints}. Patient reports #{medication_compliance ? 'compliance' : 'non-compliance'} with medications.  
+							Patient experiencing #{symptoms.map { |k,v| k}.to_sentence}",
    "css": "",
    "javascript": ""  
 }
