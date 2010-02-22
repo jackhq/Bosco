@@ -1,0 +1,131 @@
+{ 
+	"form": {
+  "name": "palliative_form",
+	"action": "/palliative/create",
+	"method": "post",
+  "pages": [
+    {
+      "questions": [
+        {
+          "type": "section",
+          "name": "palliative_section",
+          "title": "Palliative Care Assessment"
+        },
+				{
+					"type": "section",
+					"name": "consult_reason_section",
+					"title": "Reason for Consult"
+				},
+				{
+					"type": "list",
+					"name": "consult_reason_list",
+					"title": "Reason for Consult",
+					"help_text": "",
+					"options": ['Pain', 'Other Symptoms', 'Advance Care Planning', 'Goals of Care Discussion', 'Hospice Referral / Discussion', 'Withdrawal of Life Prolonging Interventions', 'Other']
+				},
+				{
+					# Need to add functionality where this list is hidden and appears if Other Symptoms is selected from consult_reason_list.
+					"type": "list",
+					"name": "consult_reason_other_symptoms_list",
+					"title": "Other Symptoms",
+					"help_text": "",
+					"options": ['Nausea / Vomiting', 'Constipation / Diarrhea', 'Dyspnea', 'Fatigue', 'Wounds', 'Depression', 'Anxiety', 'Insomnia', 'Anorexia']
+				},
+				{
+					# Need to add functionality where this text is hidden and appears if Other is selected from consult_reason_list.
+					"type": "text",
+					"name": "consult_reason_other_text",
+					"title": "Other:",
+					"help_text": ""
+				},
+				
+				{
+					"type": "section",
+					"name": "disease_classification_section",
+					"title": "Disease Classification"
+				},
+				{
+					"type": "text",
+					"name": "disease_classification_primary_diagnosis",
+					"title": "Primary Diagnosis:",
+					"help_text": ""
+				},
+				{	
+					# Not sure what How Classify? means in documentation. This should be coupled on same line as primary_diagnosis.	
+					"type": "text",
+					"name": "diesease_classification_stage",
+					"title": "Stage",
+					"help_text": "E.g. AHA/ACC;FAST"
+				},
+				{
+					# Need to get the list of objects for comorbidities.
+					"type": "list",
+					"name": "diesease_classification_comorbidities_lsit",
+					"title": "Co-Morbidities",
+					"help_text": "",
+					"options": []
+				},
+				{	
+					# Need to get more info on this section.
+					"type": "text",
+					"name": "disease_classification_prognosis_text",
+					"title": "Prognosis:"
+				},
+				{
+					"type": "section",
+					"name": "data_collection_section",
+					"title": "Data Collection"
+				},
+				{
+					"type": "multiple_choice",
+					"name": "data_collection_med_records_yn",
+					"title": "Medical Records Reviewed",
+					"help_text": "",
+					"options": ['Yes', 'No']
+				},
+				{	
+					# If selected Yes to data_collection_med_records_yn then show.
+					"type": "text",
+					"name": "data_collection_med_records_type",
+					"title": "Type:"
+				},
+				{
+					# If selected Yes to data_collection_med_records_yn then show.	
+					"type": "text",
+					"name": "data_collection_med_records_date_field",
+					"title": "Date Field:"
+				},
+				{
+					# Need to be able to add additional entries.
+					"type": "text",
+					"name": "data_collection_interviewed_name",
+					"title": "Individual(s) Interviewed"
+				},
+				{
+					"type": "list",
+					"name": "data_collection_interviewed_relationship",
+					"title": "Relationship to Patient",
+					"help_text": "",
+					"options": []
+				},
+				
+				{
+					"type": "section",
+					"name": "medications_section",
+					"title": "Medications (NOTHING HERE)"
+				},
+				
+				{
+					"type": "section",
+					"name": "ros_section",
+					"title": "ROS (Physical Domain)"
+				}
+        
+        
+          ]
+       }]
+   },
+   "output": "",
+   "css": "",
+   "javascript": ""  
+}
