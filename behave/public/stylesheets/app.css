@@ -11,3 +11,21 @@
 
   color:#4C4C4C;
 }
+
+th {
+  text-align: left; 
+  padding:3px;
+}
+
+td {
+  padding:3px;
+}
+
+textarea {
+  width: 400px;
+  height: 150px;
+}
+
+ul {
+  list-style: none;
+}

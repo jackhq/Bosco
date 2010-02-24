@@ -9,9 +9,11 @@ class App < Sinatra::Default
     haml :index
   end
   
-  get '/hpi' do
-    haml bosco('hpi').build_form    
-  end
+    
+  # get '/hpi' do
+  #   #haml bosco('hpi').build_form 
+  #   haml :hpi   
+  # end
   
   post '/hpi/create' do    
     haml bosco('hpi').build_output(params['hpi'])
@@ -80,6 +82,11 @@ class App < Sinatra::Default
   get '/len' do
     haml bosco('len').build_form
   end
+  
+  get '/*' do
+    haml params["splat"].first.to_sym
+  end
+  
   
   def bosco(name)
     template = Crack::JSON.parse(open(name + '.json').read)    

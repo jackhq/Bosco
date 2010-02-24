@@ -1,0 +1,61 @@
+%h1 Initial Assessment
+
+%table
+  %tr
+    %th &nbsp;
+    %th Name
+    %th Phone
+  %tr
+    %td Primary Care Physician
+    %td 
+      %input{:type => 'text'}
+    %td 
+      %input{:type => 'text'}
+  %tr
+    %td Mental Health Professional
+    %td 
+      %input{:type => 'text'}
+    %td 
+      %input{:type => 'text'}
+
+  %tr
+    %td Family/Guardian
+    %td 
+      %input{:type => 'text'}
+    %td 
+      %input{:type => 'text'}
+%hr
+%table
+  %tr
+    %td Fluent in English
+    %td 
+      %input{:type => 'radio'} Yes
+    %td 
+      %input{:type => 'radio'} No
+    %td &nbsp;|&nbsp;
+    %td Primary Language
+    %td 
+      %select
+        %option Not Specified
+        %option English
+        %option Spanish
+        %option French
+%table
+  %tr
+    %td Informants
+    %td 
+      %input{:type => 'text'} 
+    %td 
+      %input{:type => 'text'} 
+    %td 
+      %input{:type => 'text'} 
+
+%table
+  %tr
+    %td{:style => 'width:120px'} Patient Visit
+    %td 
+      %input{:type => 'radio'} Voluntary
+    %td 
+      %input{:type => 'radio'} Committed
+
+

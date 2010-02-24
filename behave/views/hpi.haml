@@ -1,0 +1,39 @@
+%h1 History of Present Illness
+
+.grid_7
+  %p
+    %label Reason for Today's Visit
+    %br
+    %textarea
+  %p
+    %label Chief Complaints
+    %br
+    %input{:style => 'width:400px;'}
+.grid_4
+  %table
+    %tr
+      %td Medication Compliance
+      %td
+        %input{:type => 'radio'} Yes
+      %td
+        %input{:type => 'radio'} No
+  %hr
+  %label Symptoms
+  %ul
+    %li 
+      %input{:type => 'checkbox'} Auditory Hallucinations
+    %li 
+      %input{:type => 'checkbox'} Visual Hallucinations
+    %li 
+      %input{:type => 'checkbox'} HI
+    %li 
+      %input{:type => 'checkbox'} SI - Thoughts
+    %li 
+      %input{:type => 'checkbox'} SI - Plan
+    %li 
+      %input{:type => 'checkbox'} SI - Intent
+    %li 
+      %input{:type => 'checkbox'} SI - Means
+    %li 
+      %input{:type => 'checkbox'} Delusions
+      
